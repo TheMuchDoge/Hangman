@@ -10,10 +10,13 @@ $.getJSON("ordBank.json", function(data) {
     ordBank [i]=new Array;
     ordBank [i] [0] = data.ordliste [i].ord
   }
-  getord()
-  })//getJSON
+  function neste() {
+      finnord ();
+      var n = jaord.length;
+      alert(n);
+    }
 
-    function getord() {
+    function finnord() {
     var ordet=Math.floor(Math.random()*ordBank.length);
     jaord=ordBank[ordet][0];
     wordArray=jaord.split("");
