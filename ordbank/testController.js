@@ -7,10 +7,6 @@ var ord;
 
 var spill = document.getElementById("spill")
 
-//alfabetet
-/*var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
-,'s','t','u','v','w','x','y','z','æ','ø','å'];*/
-
 
 var inpBokstav = document.getElementById("inpBokstav");
 var gjettKnapp = document.getElementById("gjettKnapp");
@@ -20,15 +16,9 @@ var ordValgTekst = document.getElementById("ordValgTekst");
 var lengdeTekst = document.getElementById("lengdeTekst");
 var livTekst = document.getElementById("livTekst");
 var riktigBokstavTekst = document.getElementById("riktigBokstavTekst");
-
-
-
-    var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
+//alfabetet i array
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
     ,'s','t','u','v','w','x','y','z','æ','ø','å'];
-
-
-
-
 
 $.getJSON("ordBank.json", function(data) {
   for(i=0; i<data.ordliste.length; i++) {
@@ -37,15 +27,10 @@ $.getJSON("ordBank.json", function(data) {
   }
   for (z in alphabet) {
     document.getElementById("knapper").innerHTML += "<button id=" + z + ">" + alphabet[z] + "</button>";
-
     }
-
-
-
-    document.getElementById(z).onclick = function() {
+document.getElementById(z).onclick = function() {
       knapper.style.visibility = 'hidden';
-
-       }
+    }
 
   neste();
 
@@ -56,35 +41,29 @@ $.getJSON("ordBank.json", function(data) {
         finnord ();
         var n = ord.length;
         var liv = n;
+        //disse er bare for testing purposes
         ordValgTekst.innerHTML += ord;
         lengdeTekst.innerHTML += n;
         livTekst.innerHTML += liv;
 
 
 
-//ska jo egentlig lag boksa, men vetdafaen
+//slager tiles for riktige bokstaver kalt t0,t1 osv
       var bokstaver=ord.length;
-  //    alert(bokstaver)
         for(j=0;j<bokstaver;j++){
           $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
 
 
-        //    alert(n);
     }
     }
 
-
+//velger ett ord fra ordbank array, samt deler det opp og setter d i en array
 
     function finnord() {
     var ordet=Math.floor(Math.random()*ordBank.length);
     ord=ordBank[ordet][0];
     ordArray=ord.split("");
-
-
-
-
-
-/*
+/* bare for å sjekke om koden er rett og den henter ut ett ord
     alert(ordet);
     alert(ord);
     alert(ordArray);
@@ -94,24 +73,35 @@ $.getJSON("ordBank.json", function(data) {
   gjettKnapp.onclick = function(){
 
     var gjettResultat = false;
-    var input =
-  //  var input = inpBokstav.value
+    var input = inpBokstav.value;
 
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
         gjettResultat = true;
+        //skriver til tile
         $('#t'+x).append(input);
           }else{
         gjettResultat = false;
       }
     }
     if(gjettResultat == true){
-      riktigBokstavTekst.innerHTML += inpBokstav.value;
+      //hvis bokstaven er i ordet, kjører funksjonen for å sjekke om hele ordet er riktig
+      sjekkSvar();
 
     }else{
       feilBokstavTekst.innerHTML += inpBokstav.value;
     }
   }
+//sjekker om svaret er riktig
+  function sjekkSvar() {
+    var svar = ""
+    for(i=0;i<ord.length;i++){
+      svar+=($('#t'+i).text());
+  }
+  if (svar==ord) {
+    alert("RIKTIG!!");
 
+  }
+}
 
 });
