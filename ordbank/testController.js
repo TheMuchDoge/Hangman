@@ -3,7 +3,7 @@ $(document).ready(function ()  {
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
-var jaord;
+var ord;
 
 var spill = document.getElementById("spill")
 
@@ -22,22 +22,11 @@ var livTekst = document.getElementById("livTekst");
 var riktigBokstavTekst = document.getElementById("riktigBokstavTekst");
 
 
-window.onload = function() {
+
     var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
     ,'s','t','u','v','w','x','y','z','æ','ø','å'];
 
-for (x in alphabet) {
-  document.getElementById("knapper").innerHTML += "<button id=" + x + ">" + alphabet[x] + "</button>";
 
-  }
-
-
-
-  document.getElementById(x).onclick = function() {
-    knapper.style.visibility = 'hidden';
-
-     }
-  }
 
 
 
@@ -46,6 +35,18 @@ $.getJSON("ordBank.json", function(data) {
     ordBank [i]=new Array;
     ordBank [i][0]=data.ordliste [i].ord
   }
+  for (z in alphabet) {
+    document.getElementById("knapper").innerHTML += "<button id=" + z + ">" + alphabet[z] + "</button>";
+
+    }
+
+
+
+    document.getElementById(z).onclick = function() {
+      knapper.style.visibility = 'hidden';
+
+       }
+
   neste();
 
   })
@@ -53,16 +54,16 @@ $.getJSON("ordBank.json", function(data) {
     function neste() {
       $('#spill').append('<div id="bokstav"></div>');
         finnord ();
-        var n = jaord.length;
+        var n = ord.length;
         var liv = n;
-        ordValgTekst.innerHTML += jaord;
+        ordValgTekst.innerHTML += ord;
         lengdeTekst.innerHTML += n;
         livTekst.innerHTML += liv;
 
 
 
 //ska jo egentlig lag boksa, men vetdafaen
-      var bokstaver=jaord.length;
+      var bokstaver=ord.length;
   //    alert(bokstaver)
         for(j=0;j<bokstaver;j++){
           $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
@@ -76,8 +77,8 @@ $.getJSON("ordBank.json", function(data) {
 
     function finnord() {
     var ordet=Math.floor(Math.random()*ordBank.length);
-    jaord=ordBank[ordet][0];
-    ordArray=jaord.split("");
+    ord=ordBank[ordet][0];
+    ordArray=ord.split("");
 
 
 
@@ -85,7 +86,7 @@ $.getJSON("ordBank.json", function(data) {
 
 /*
     alert(ordet);
-    alert(jaord);
+    alert(ord);
     alert(ordArray);
 */
   }
@@ -93,7 +94,8 @@ $.getJSON("ordBank.json", function(data) {
   gjettKnapp.onclick = function(){
 
     var gjettResultat = false;
-    var input = inpBokstav.value
+    var input =
+  //  var input = inpBokstav.value
 
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
