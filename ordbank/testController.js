@@ -4,22 +4,13 @@ var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
 var ord;
-var guess ;
-var spill = document.getElementById("spill")
-
-//alfabetet
-/*var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
-,'s','t','u','v','w','x','y','z','æ','ø','å'];*/
-
-
-var inpBokstav = document.getElementById("inpBokstav");
-var gjettKnapp = document.getElementById("gjettKnapp");
-
+var input;
+var liv = 5;
 var feilBokstavTekst = document.getElementById("feilBokstavTekst");
 var ordValgTekst = document.getElementById("ordValgTekst");
-var lengdeTekst = document.getElementById("lengdeTekst");
-var livTekst = document.getElementById("livTekst");
-var riktigBokstavTekst = document.getElementById("riktigBokstavTekst");
+var livigjen = document.getElementById("livTekst")
+
+
 
 
 
@@ -62,10 +53,8 @@ $.getJSON("ordBank.json", function(data) {
       $('#spill').append('<div id="bokstav"></div>');
         finnord ();
         var n = ord.length;
-        var liv = n;
         ordValgTekst.innerHTML += ord;
-        lengdeTekst.innerHTML += n;
-        livTekst.innerHTML += liv;
+
 
 
 
@@ -105,7 +94,7 @@ $.getJSON("ordBank.json", function(data) {
 
 
     var gjettResultat = false;
-    var input = this.id;
+    input = this.id;
 
       //  var input = inpBokstav.value
 
@@ -132,8 +121,28 @@ function sjekkSvar() {
   }
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
-  alert("FEIL BOKSTAV")
+  feilBokstavTekst.innerHTML += input;
+  liv-=1
+  livigjen=liv
+  if (liv<1) {
+    $("#spill").empty();
+    $('#spill').append('<div id="spillover">GAMEOVER!</div>');
+    $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
 }
+}
+/*
+function Restart() {
+  document.getElementById("reset").onclick = function(){
+    bokstaver.parentNode.removeChild(bokstav)
+
+}
+}
+/*function livcheck() {
+  liv-=1
+  if (liv<1) {
+    $('#spill').append('<div id="spillover">GAMEOVER!</div>');
+  }*/
+
 
 
 
