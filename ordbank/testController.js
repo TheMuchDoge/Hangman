@@ -4,7 +4,7 @@ var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
 var ord;
-
+var guess ;
 var spill = document.getElementById("spill")
 
 //alfabetet
@@ -35,21 +35,28 @@ $.getJSON("ordBank.json", function(data) {
     ordBank [i]=new Array;
     ordBank [i][0]=data.ordliste [i].ord
   }
-  for (z in alphabet) {
-    document.getElementById("knapper").innerHTML += "<button id=" + z + ">" + alphabet[z] + "</button>";
+  for(i=0;i<alphabet.length;i++){
+      $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i]+'</button>');
 
-    }
+      }
 
 
 
-    document.getElementById(z).onclick = function() {
-      knapper.style.visibility = 'hidden';
+    /*  document.getElementById(x).onclick = function() {
+        knapper.style.visibility = 'hidden';
 
-       }
+      }*/
+
 
   neste();
 
   })
+
+
+
+
+
+
 //kaller på funksjon til Ã¥ finne ordet
     function neste() {
       $('#spill').append('<div id="bokstav"></div>');
@@ -64,8 +71,7 @@ $.getJSON("ordBank.json", function(data) {
 
 //ska jo egentlig lag boksa, men vetdafaen
       var bokstaver=ord.length;
-  //    alert(bokstaver)
-        for(j=0;j<bokstaver;j++){
+              for(j=0;j<bokstaver;j++){
           $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
 
 
@@ -91,27 +97,44 @@ $.getJSON("ordBank.json", function(data) {
 */
   }
 
-  gjettKnapp.onclick = function(){
+
+//onclick funksjon for alfabetet
+  $(document.body).on('click', 'button', function() {
+    //disable knappen som blir trykket
+    $(this).attr('disabled', 'disabled');
+
 
     var gjettResultat = false;
-    var input =
-  //  var input = inpBokstav.value
+    var input = this.id;
+
+      //  var input = inpBokstav.value
 
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
-        gjettResultat = true;
         $('#t'+x).append(input);
-          }else{
-        gjettResultat = false;
-      }
-    }
-    if(gjettResultat == true){
-      riktigBokstavTekst.innerHTML += inpBokstav.value;
+        gjettResultat = true;
+          }
+}
+    if(gjettResultat){sjekkSvar();}
+    else{feil();}
 
-    }else{
-      feilBokstavTekst.innerHTML += inpBokstav.value;
-    }
+
+  })
+  //funksjon som sjekker om hele svaret er skrevet inn hvis en bokstav som er i ordet blir trykket.
+function sjekkSvar() {
+  var svar = "";
+  for (var i = 0; i < ord.length; i++) {
+    svar+=($('#t'+i).text());
   }
+
+  if(svar==ord){
+    alert("DU VANT!")};
+  }
+//funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
+function feil() {
+  alert("FEIL BOKSTAV")
+}
+
 
 
 });
