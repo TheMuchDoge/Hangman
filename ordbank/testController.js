@@ -49,7 +49,7 @@ $.getJSON("ordBank.json", function(data) {
   neste();
 
   })
-//kaller pÃ¥ funksjon til Ã¥ finne ordet
+//kaller på funksjon til Ã¥ finne ordet
     function neste() {
       $('#spill').append('<div id="bokstav"></div>');
         finnord ();
