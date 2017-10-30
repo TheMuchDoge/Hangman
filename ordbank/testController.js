@@ -54,7 +54,7 @@ $.getJSON("ordBank.json", function(data) {
         finnord ();
         var n = ord.length;
         ordValgTekst.innerHTML += ord;
-
+        livigjen.innerHTML = liv
 
 
 
@@ -123,7 +123,7 @@ function sjekkSvar() {
 function feil() {
   feilBokstavTekst.innerHTML += input;
   liv-=1
-  livigjen=liv
+  livigjen.innerHTML = liv
   if (liv<1) {
     $("#spill").empty();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
