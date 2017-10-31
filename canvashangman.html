@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hangman</title>
+    <style>
+/*body{
+  background-image: url("arcadebakgrunn.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
+}*/
+
+canvas {
+  margin-left:300px;
+}
+    </style>
+  </head>
+  <body>
+
+    <canvas width="800" height="600">Din nettleser støtter ikke canvas-elementet</canvas>
+
+
+    <script>
+var canvas = document. querySelector('canvas');
+var c = canvas.getContext('2d');
+
+
+//Hode
+c.beginPath();
+c.lineWidth=2;
+c.arc(300,200,25,0,2*Math.PI);
+c.stroke();
+//Kropp
+c.beginPath();
+c.lineWidth=2;
+c.moveTo(300, 225);
+c.lineTo(300,325);
+c.stroke();
+//Høyre arm
+c.moveTo(300,225);
+c.lineWidth=2;
+c.lineTo(350,275);
+c.stroke();
+//Venstre arm
+c.moveTo(300,225);
+c.lineWidth=2;
+c.lineTo(250,275);
+c.stroke();
+//Høyre ben
+c.moveTo(300,325);
+c.lineWidth=2;
+c.lineTo(330,395);
+c.stroke();
+//Venstre ben
+c.moveTo(300,325);
+c.lineWidth=2;
+c.lineTo(270,395);
+c.stroke();
+
+//Tegning av krana
+c.beginPath();
+c.lineWidth=13;
+c.moveTo(50,500);
+c.lineTo(100,450);
+c.lineTo(100,100);
+c.lineTo(305,100);
+c.stroke()
+c.lineWidth=4;
+c.moveTo(300,100);
+c.lineTo(300,175);
+c.stroke();
+c.beginPath();
+c.lineWidth=13;
+c.moveTo(150,500);
+c.lineTo(100,450);
+c.stroke();
+c.beginPath();
+c.lineWidth=7;
+c.moveTo(100,150);
+c.lineTo(150,100);
+c.stroke();
+
+
+
+
+
+
+    </script>
+
+
+  </body>
+</html>
