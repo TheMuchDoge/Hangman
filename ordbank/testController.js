@@ -48,7 +48,7 @@ $.getJSON("ordBank.json", function(data) {
 
 
 
-//kaller på funksjon til Ã¥ finne ordet
+//kaller på funksjon til Ã¥ finne ordet for så å lage tiles til å vise riktige bokstaver
     function neste() {
       $('#spill').append('<div id="bokstav"></div>');
         finnord ();
@@ -58,7 +58,7 @@ $.getJSON("ordBank.json", function(data) {
 
 
 
-//ska jo egentlig lag boksa, men vetdafaen
+//Lager bokser og gir de navnet t0, t1 osv opp til antal bokstaver i ord -1
       var bokstaver=ord.length;
               for(j=0;j<bokstaver;j++){
           $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
@@ -79,7 +79,7 @@ $.getJSON("ordBank.json", function(data) {
 
 
 
-/*
+/* testing purposes
     alert(ordet);
     alert(ord);
     alert(ordArray);
@@ -96,10 +96,9 @@ $.getJSON("ordBank.json", function(data) {
     var gjettResultat = false;
     input = this.id;
 
-      //  var input = inpBokstav.value
-
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
+        //setter inn bokstaven på riktig tile hvis bokstaven er i ordet
         $('#t'+x).append(input);
         gjettResultat = true;
           }
@@ -130,19 +129,6 @@ function feil() {
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
 }
 }
-/*
-function Restart() {
-  document.getElementById("reset").onclick = function(){
-    bokstaver.parentNode.removeChild(bokstav)
-
-}
-}
-/*function livcheck() {
-  liv-=1
-  if (liv<1) {
-    $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-  }*/
-
 
 
 
