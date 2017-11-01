@@ -5,7 +5,7 @@ var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
 var input;
-var liv = 5;
+var liv = 7;
 var feilBokstavTekst = document.getElementById("feilBokstavTekst");
 var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
@@ -59,6 +59,7 @@ $.getJSON("ordBank.json", function(data) {
         var n = ord.length;
         ordValgTekst.innerHTML += ord;
         livigjen.innerHTML = liv
+        kran();
 
 
 
@@ -125,7 +126,7 @@ function sjekkSvar() {
   }
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
-  feilBokstavTekst.innerHTML += input;
+  canvas();
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
@@ -146,6 +147,157 @@ function Restart() {
   if (liv<1) {
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
   }*/
+
+  //CANVAS
+  function canvas(){
+  var canvas = document.querySelector('canvas');
+  var c = canvas.getContext('2d');
+
+
+if (liv==7) {
+
+  //Hode
+  c.beginPath();
+  c.lineWidth=2;
+  c.arc(300,200,25,0,2*Math.PI);
+  c.stroke();
+
+}
+if (liv==6) {
+  //Kropp
+  c.beginPath();
+  c.lineWidth=2;
+  c.moveTo(300, 225);
+  c.lineTo(300,325);
+  c.stroke();
+
+}
+if (liv==5) {
+  //høyre arm
+  c.moveTo(300,225);
+  c.lineWidth=2;
+  c.lineTo(350,275);
+  c.stroke();
+
+}
+if (liv==4) {
+  //Venstre arm
+
+  c.moveTo(300,225);
+  c.lineWidth=2;
+  c.lineTo(250,275);
+  c.stroke();
+
+}
+if (liv==3) {
+  //Høyre ben
+
+  c.moveTo(300,325);
+  c.lineWidth=2;
+  c.lineTo(330,395);
+  c.stroke();
+
+}
+if (liv==2) {
+  //Venstre ben
+
+  c.moveTo(300,325);
+  c.lineWidth=2;
+  c.lineTo(270,395);
+  c.stroke();
+
+}
+if (liv==1) {
+
+    c.clearRect(0,0,canvas.width,canvas.height);
+  //død mann
+  c.beginPath();
+  c.lineWidth=2;
+  c.arc(290,200,25,0,2*Math.PI);
+  c.stroke();
+  //kropp
+  c.beginPath();
+  c.lineWidth=2;
+  c.moveTo(300, 225);
+  c.lineTo(300,325);
+  c.stroke();
+  //høyre arm
+  c.moveTo(300,225);
+  c.lineWidth=2;
+  c.lineTo(310,275);
+  c.stroke();
+  //venste arm
+  c.moveTo(300,225);
+  c.lineWidth=2;
+  c.lineTo(290,275);
+  c.stroke();
+  //høyre ben
+  c.moveTo(300,325);
+  c.lineWidth=2;
+  c.lineTo(305,395);
+  c.stroke();
+  //venstre ben
+  c.moveTo(300,325);
+  c.lineWidth=2;
+  c.lineTo(295,395);
+  c.stroke();
+//kran
+c.beginPath();
+c.lineWidth=13;
+c.moveTo(50,500);
+c.lineTo(100,450);
+c.lineTo(100,100);
+c.lineTo(305,100);
+c.stroke()
+c.lineWidth=4;
+c.moveTo(300,100);
+c.lineTo(300,175);
+c.stroke();
+c.beginPath();
+c.lineWidth=13;
+c.moveTo(150,500);
+c.lineTo(100,450);
+c.stroke();
+c.beginPath();
+c.lineWidth=7;
+c.moveTo(100,150);
+c.lineTo(150,100);
+c.stroke();
+
+}
+}
+function kran() {
+  var canvas = document.querySelector('canvas');
+  var c = canvas.getContext('2d');
+
+  //Tegning av krana
+  c.beginPath();
+  c.lineWidth=13;
+  c.moveTo(50,500);
+  c.lineTo(100,450);
+  c.lineTo(100,100);
+  c.lineTo(305,100);
+  c.stroke()
+  c.lineWidth=4;
+  c.moveTo(300,100);
+  c.lineTo(300,175);
+  c.stroke();
+  c.beginPath();
+  c.lineWidth=13;
+  c.moveTo(150,500);
+  c.lineTo(100,450);
+  c.stroke();
+  c.beginPath();
+  c.lineWidth=7;
+  c.moveTo(100,150);
+  c.lineTo(150,100);
+  c.stroke();
+
+}
+
+
+
+
 
 
 
