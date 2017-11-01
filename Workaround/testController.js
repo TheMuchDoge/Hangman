@@ -161,6 +161,17 @@ if (liv==7) {
   c.lineWidth=2;
   c.arc(300,200,25,0,2*Math.PI);
   c.stroke();
+  //øyne
+  c.moveTo(290,190);
+  c.lineTo(290,195);
+  c.stroke();
+  c.moveTo(310,190);
+  c.lineTo(310,195);
+  c.stroke();
+  //munn
+  c.beginPath();
+  c.arc(300,205,5,0,Math.PI);
+  c.stroke();
 
 }
 if (liv==6) {
