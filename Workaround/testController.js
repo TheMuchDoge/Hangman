@@ -241,6 +241,24 @@ if (liv==1) {
   c.lineWidth=2;
   c.lineTo(295,395);
   c.stroke();
+  //øyne
+  c.moveTo(300,190);
+  c.lineTo(295,195);
+  c.stroke();
+  c.moveTo(295,190);
+  c.lineTo(300,195);
+  c.stroke();
+  c.moveTo(280,195);
+  c.lineTo(285,200);
+  c.stroke();
+  c.moveTo(285,195);
+  c.lineTo(280,200);
+  c.stroke();
+  //munn
+  c.moveTo(290,215);
+  c.lineTo(300,210);
+  c.stroke();
+
 //kran
 c.beginPath();
 c.lineWidth=13;
