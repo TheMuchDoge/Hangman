@@ -262,8 +262,8 @@ function kran() {
 });
 
 function byttStil(stil){
-  document.styleSheets[0].href = "ressurser/" + stil + ".css";
-  document.getElementById("cssLink").href = "ressurser/" + stil + ".css"; 
+  
+  document.getElementById("cssLink").href = "stiler/" + stil + ".css"; 
 
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   
