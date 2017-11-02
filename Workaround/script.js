@@ -87,7 +87,7 @@ function feil() {
         if ($('#t'+x).is(':empty')){
             $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
         }
-
+        
   }
 }
 }
@@ -263,15 +263,5 @@ function kran() {
 });
 
 function byttStil(stil){
-<<<<<<< HEAD
-  
-  document.getElementById("cssLink").href = "stiler/" + stil + ".css"; 
-
-  document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-  
   document.styleSheets[0].href = "ressurser/" + stil + ".css";
-
-=======
-  document.styleSheets[0].href = "ressurser/" + stil + ".css";
->>>>>>> 4e7e98f5ee65681b91a7877772012e338824f470
 }
