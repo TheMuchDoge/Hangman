@@ -87,6 +87,7 @@ function feil() {
         if ($('#t'+x).is(':empty')){
             $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
         }
+        
   }
 }
 }
