@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html id="htmlhtml">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hangman Arcade</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="theme.css">
-    <link async href="http://fonts.googleapis.com/css?family=Anton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-    <link async href="http://fonts.googleapis.com/css?family=Warnes" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    <!-- <embed id="Audiotrack" src="Arcade.mp3" autostart="true" loop="true"> -->
+    <meta charset="utf-8">
+    <title>Hangman</title>
+<style>
+#bit{
+  margin-left:180px;
+
+}
+#arcade{
+  margin-left:180px;
+}
+img {
+  border:4px solid;
+  width:200px;
+  height:100px;
+}
+</style>
   </head>
-  <body id="bodybody">
-    <nav class="navbar navbar-inverse">
-      <p class="navbar-text">Hangman</p>
-        <ul class="nav navbar-nav">
-          <li><a onclick="byttStil(arcade)">Vanilla</a></li>
-          <li><a href="index.html">Arcade</a></li>
-        </ul>
-    </nav>
-    <div id="player">
-      <audio controls autoplay loop>
-        <source id="lydSpor" src="ressurser/bitmusikk.mp3" type="audio/mp3">
-        Nettleseren din støtter ikke lydavspilling.
-      </audio>
-    </div>
-    <div id="Hangmanlogo">HANGMAN 1.0</div>
-    <div id="livTekst">Liv igjen: </div>
-    <div id="ordValgTekst">Ordet: </div>
-    <div id="feilBokstavTekst">Feil bokstaver: </div>
-    <canvas width="800" height="600">Din nettleser støtter ikke canvas-elementet</canvas>
-    <div id="spill"></div>
-    <div id="knapper"></div>
+  <body>
+
+    <h1>HANGMAN</h1>
+    <h2>Velg versjon:</h2>
+    <span id="vanilla">Vanilla</span><span id="bit">8-Bit</span><span id="arcade">Arcade</span><br>
+    <a href="HangmanVanilla.html">
+    <img src="vanilla_bilde.png" id="openVanilla" onclick="openVanilla">
+    </a>
+    <a href="HangmanBit.html">
+    <img src="8_bit_bilde.png" id="openBit" onclick="openBit()">
+    </a>
+    <a href="HangmanArcade.html">
+    <img src="arcade_bilde.png" id="openArcade" onclick="openArcade()">
+    </a>
+
+<script>
+function openVanilla() {
+
+}
+
+</script>
   </body>
 </html>
