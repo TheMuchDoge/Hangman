@@ -1,5 +1,5 @@
 $(document).ready(function ()  {
-
+$(document).keypress(tast)
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -40,7 +40,23 @@ function neste() {
   for(j=0;j<bokstaver;j++){
       $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
+
   }
+
+function tast(event) {
+
+  var input2 = String.fromCharCode (event.keyCode).toLowerCase();
+    var gjettResultat = false;
+    for(var x = 0;x<ordArray.length;x++){
+      if(input2 == ordArray[x]){
+        $('#t'+x).append(input2);
+        gjettResultat = true;
+          }
+        }
+        if(gjettResultat){sjekkSvar();}
+        else{feil();}
+      }
+
 
 //onclick funksjon for alfabetet
   $("#knapper").on('click', 'button', function() {
@@ -87,7 +103,7 @@ function feil() {
         if ($('#t'+x).is(':empty')){
             $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
         }
-        
+
   }
 }
 }
@@ -263,5 +279,9 @@ function kran() {
 });
 
 function byttStil(stil){
-  document.styleSheets[0].href = "ressurser/" + stil + ".css";
+
+  document.getElementById("cssLink").href = "stiler/" + stil + ".css";
+
+  document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+
 }
