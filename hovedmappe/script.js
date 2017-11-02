@@ -257,6 +257,15 @@ function kran() {
 
 function byttStil(stil){
   document.styleSheets[0].href = "ressurser/" + stil + ".css";
+  document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3"
+
+
+  <div id="player">
+      <audio controls autoplay loop id="lydspor">
+        <source src="ressurser/Arcade.mp3" type="audio/mpeg">
+        Nettleseren din støtter ikke lydavspilling.
+      </audio>
+    </div>
 }
 
 
