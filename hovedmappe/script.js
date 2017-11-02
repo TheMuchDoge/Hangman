@@ -43,7 +43,7 @@ function neste() {
   }
 
 //onclick funksjon for alfabetet
-  $(document.body).on('click', 'button', function() {
+  $("#knapper").on('click', 'button', function() {
     //disable knappen som blir trykket
     $(this).attr('disabled', 'disabled');
 
