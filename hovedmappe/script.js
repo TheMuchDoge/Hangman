@@ -79,18 +79,18 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#knapper").hide();
+    $("#spill").empty();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
-            $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');}
-          }
+            $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
         }
-      }
-    }
-
+  }
+}
+}
+}
 
 function canvas(){
   var canvas = document.querySelector('canvas');
@@ -262,9 +262,13 @@ function kran() {
 });
 
 function byttStil(stil){
+<<<<<<< HEAD
   
   document.getElementById("cssLink").href = "stiler/" + stil + ".css"; 
 
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   
+=======
+  document.styleSheets[0].href = "ressurser/" + stil + ".css";
+>>>>>>> eee01cb03e84f081cde105bc609d4dfc6ab73dc5
 }

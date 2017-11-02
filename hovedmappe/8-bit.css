@@ -8,9 +8,11 @@ html {
   position: absolute;
 }
 body {
-  background-image: url("ressurser/8-bit.png");
+  background: url("ressurser/8-bit.png");
   background-repeat: no-repeat;
   position: relative;
+  background-size: 100% 100%;
+
 }
 button {
   -webkit-box-sizing: content-box;
