@@ -5,8 +5,9 @@ var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
 var input;
+var input2;
 var liv = 7;
-var feilBokstavTekst = document.getElementById("feilBokstavTekst");
+
 var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
 
@@ -32,6 +33,7 @@ function neste() {
   var n = ord.length;
   ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
+  feilBokstavTekst.innerHTML = input & input2
   kran();
 
   //ska jo egentlig lag boksa, men vetdafaen
@@ -46,16 +48,28 @@ function neste() {
 function tast(event) {
 
   var input2 = String.fromCharCode (event.keyCode).toLowerCase();
+
     var gjettResultat = false;
-    for(var x = 0;x<ordArray.length;x++){
-      if(input2 == ordArray[x]){
-        $('#t'+x).append(input2);
-        gjettResultat = true;
+
+      for(i=0;i<forsokt.length;i++){
+        if(input2==forsokt[i]){
+          forsokt.push(input2)
+        } else {
+
+
+
+
+          for(var x = 0;x<ordArray.length;x++){
+            if(input2 == ordArray[x]){
+              $('#t'+x).append(input2);
+              gjettResultat = true;
+                }
+              }
+              if(gjettResultat){sjekkSvar();}
+              else{feil();}
+            }
           }
         }
-        if(gjettResultat){sjekkSvar();}
-        else{feil();}
-      }
 
 
 //onclick funksjon for alfabetet
@@ -72,6 +86,7 @@ function tast(event) {
       if(input == ordArray[x]){
         $('#t'+x).append(input);
         gjettResultat = true;
+        forsokt.push(input)
           }
 }
     if(gjettResultat){sjekkSvar();}
