@@ -10,93 +10,42 @@ var feilBokstavTekst = document.getElementById("feilBokstavTekst");
 var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
 
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
+,'s','t','u','v','w','x','y','z','æ','ø','å'];
 
+var ordAlt = ["damer", "spill", "datamaskin"];
+var valg = Number(Math.floor((Math.random() * ordAlt.length)));
+var ord = ordAlt[valg];
 
+ordArray=ord.split("");
+  
+for(i=0;i<alphabet.length;i++){
+    $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i]+'</button>');
+  }
 
-
-    var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
-    ,'s','t','u','v','w','x','y','z','æ','ø','å'];
-
-
-
-
-/*
-$.getJSON("ordBank.json", function(data) {
-  for(i=0; i<data.ordliste.length; i++) {
-    ordBank [i]=new Array;
-    ordBank [i][0]=data.ordliste [i].ord
-  }*/
-  var ordAlt = ["damer", "spill", "datamaskin"];
-  var valg = Number(Math.floor((Math.random() * ordAlt.length)));
-  var ord = ordAlt[valg];
-  ordArray=ord.split("");
-  for(i=0;i<alphabet.length;i++){
-      $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i]+'</button>');
-
-      }
-
-
-
-    /*  document.getElementById(x).onclick = function() {
-        knapper.style.visibility = 'hidden';
-
-      }*/
-
-
-  neste();
-
-  //})
-
-
-
-
-
+neste();
 
 //kaller på funksjon til Ã¥ finne ordet
-    function neste() {
-      $('#spill').append('<div id="bokstav"></div>');
-      //  finnord ();
-        var n = ord.length;
-        ordValgTekst.innerHTML += ord;
-        livigjen.innerHTML = liv
-        kran();
+function neste() {
+  $('#spill').append('<div id="bokstav"></div>');
+  //  finnord ();
+  var n = ord.length;
+  ordValgTekst.innerHTML += ord;
+  livigjen.innerHTML = liv
+  kran();
 
-
-
-//ska jo egentlig lag boksa, men vetdafaen
-      var bokstaver=ord.length;
-              for(j=0;j<bokstaver;j++){
-          $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
-
-
-        //    alert(n);
+  //ska jo egentlig lag boksa, men vetdafaen
+  var bokstaver=ord.length;
+  
+  for(j=0;j<bokstaver;j++){
+      $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
-    }
-
-
-/*
-    function finnord() {
-    var ordet=Math.floor(Math.random()*ordBank.length);
-    ord=ordBank[ordet][0];
-    ordArray=ord.split("");
-}
-*/
-
-
-
-/*
-    alert(ordet);
-    alert(ord);
-    alert(ordArray);
-*/
-
-
+  }
 
 //onclick funksjon for alfabetet
   $(document.body).on('click', 'button', function() {
     //disable knappen som blir trykket
     $(this).attr('disabled', 'disabled');
-
 
     var gjettResultat = false;
     input = this.id;
@@ -111,10 +60,9 @@ $.getJSON("ordBank.json", function(data) {
 }
     if(gjettResultat){sjekkSvar();}
     else{feil();}
-
-
   })
-  //funksjon som sjekker om hele svaret er skrevet inn hvis en bokstav som er i ordet blir trykket.
+
+//funksjon som sjekker om hele svaret er skrevet inn hvis en bokstav som er i ordet blir trykket.
 function sjekkSvar() {
   var svar = "";
   for (var i = 0; i < ord.length; i++) {
@@ -124,6 +72,7 @@ function sjekkSvar() {
   if(svar==ord){
     alert("DU VANT!")};
   }
+
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
   canvas();
@@ -133,47 +82,33 @@ function feil() {
     $("#spill").empty();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
+  }
 }
-}
-/*
-function Restart() {
-  document.getElementById("reset").onclick = function(){
-    bokstaver.parentNode.removeChild(bokstav)
 
-}
-}
-/*function livcheck() {
-  liv-=1
-  if (liv<1) {
-    $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-  }*/
 
-  //CANVAS
-  function canvas(){
+function canvas(){
   var canvas = document.querySelector('canvas');
   var c = canvas.getContext('2d');
 
+  if (liv==7) {
+    //Hode
+    c.beginPath();
+    c.lineWidth=2;
+    c.arc(300,200,25,0,2*Math.PI);
+    c.stroke();
+    //øyne
+    c.moveTo(290,190);
+    c.lineTo(290,195);
+    c.stroke();
+    c.moveTo(310,190);
+    c.lineTo(310,195);
+    c.stroke();
+    //munn
+    c.beginPath();
+    c.arc(300,205,5,0,Math.PI);
+    c.stroke();
+  }
 
-if (liv==7) {
-
-  //Hode
-  c.beginPath();
-  c.lineWidth=2;
-  c.arc(300,200,25,0,2*Math.PI);
-  c.stroke();
-  //øyne
-  c.moveTo(290,190);
-  c.lineTo(290,195);
-  c.stroke();
-  c.moveTo(310,190);
-  c.lineTo(310,195);
-  c.stroke();
-  //munn
-  c.beginPath();
-  c.arc(300,205,5,0,Math.PI);
-  c.stroke();
-
-}
 if (liv==6) {
   //Kropp
   c.beginPath();
@@ -181,46 +116,42 @@ if (liv==6) {
   c.moveTo(300, 225);
   c.lineTo(300,325);
   c.stroke();
-
 }
+
 if (liv==5) {
   //høyre arm
   c.moveTo(300,225);
   c.lineWidth=2;
   c.lineTo(350,275);
   c.stroke();
-
 }
+
 if (liv==4) {
   //Venstre arm
-
   c.moveTo(300,225);
   c.lineWidth=2;
   c.lineTo(250,275);
   c.stroke();
-
 }
+
 if (liv==3) {
   //Høyre ben
-
   c.moveTo(300,325);
   c.lineWidth=2;
   c.lineTo(330,395);
   c.stroke();
-
 }
+
 if (liv==2) {
   //Venstre ben
-
   c.moveTo(300,325);
   c.lineWidth=2;
   c.lineTo(270,395);
   c.stroke();
-
 }
-if (liv==1) {
 
-    c.clearRect(0,0,canvas.width,canvas.height);
+if (liv==1) {
+  c.clearRect(0,0,canvas.width,canvas.height);
   //død mann
   c.beginPath();
   c.lineWidth=2;
@@ -270,31 +201,31 @@ if (liv==1) {
   c.lineTo(300,210);
   c.stroke();
 
-//kran
-c.beginPath();
-c.lineWidth=13;
-c.moveTo(50,500);
-c.lineTo(100,450);
-c.lineTo(100,100);
-c.lineTo(305,100);
-c.stroke()
-c.lineWidth=4;
-c.moveTo(300,100);
-c.lineTo(300,175);
-c.stroke();
-c.beginPath();
-c.lineWidth=13;
-c.moveTo(150,500);
-c.lineTo(100,450);
-c.stroke();
-c.beginPath();
-c.lineWidth=7;
-c.moveTo(100,150);
-c.lineTo(150,100);
-c.stroke();
+  //kran
+  c.beginPath();
+  c.lineWidth=13;
+  c.moveTo(50,500);
+  c.lineTo(100,450);
+  c.lineTo(100,100);
+  c.lineTo(305,100);
+  c.stroke()
+  c.lineWidth=4;
+  c.moveTo(300,100);
+  c.lineTo(300,175);
+  c.stroke();
+  c.beginPath();
+  c.lineWidth=13;
+  c.moveTo(150,500);
+  c.lineTo(100,450);
+  c.stroke();
+  c.beginPath();
+  c.lineWidth=7;
+  c.moveTo(100,150);
+  c.lineTo(150,100);
+  c.stroke();
+  }
+}
 
-}
-}
 function kran() {
   var canvas = document.querySelector('canvas');
   var c = canvas.getContext('2d');
@@ -321,7 +252,20 @@ function kran() {
   c.moveTo(100,150);
   c.lineTo(150,100);
   c.stroke();
+  }
+});
 
+function byttStil(stil){
+  document.styleSheets[0].href = "ressurser/" + stil + ".css";
+  document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3"
+
+
+  <div id="player">
+      <audio controls autoplay loop id="lydspor">
+        <source src="ressurser/Arcade.mp3" type="audio/mpeg">
+        Nettleseren din støtter ikke lydavspilling.
+      </audio>
+    </div>
 }
 
 
@@ -331,4 +275,21 @@ function kran() {
 
 
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
