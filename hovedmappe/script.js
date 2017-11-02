@@ -262,13 +262,11 @@ function kran() {
 });
 
 function byttStil(stil){
-<<<<<<< HEAD
   
   document.getElementById("cssLink").href = "stiler/" + stil + ".css"; 
 
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   
-=======
   document.styleSheets[0].href = "ressurser/" + stil + ".css";
->>>>>>> eee01cb03e84f081cde105bc609d4dfc6ab73dc5
+
 }
