@@ -263,11 +263,8 @@ function kran() {
 
 function byttStil(stil){
   document.styleSheets[0].href = "ressurser/" + stil + ".css";
-<<<<<<< HEAD
-  document.getElementById("cssLink").href = "ressurser/vanilla.css";
+  document.getElementById("cssLink").href = "ressurser/" + stil + ".css"; 
 
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   
-=======
->>>>>>> fa4f25845f28cda2a8fd78850d57345b8f7b9b44
 }
