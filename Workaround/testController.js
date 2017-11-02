@@ -37,12 +37,6 @@ $.getJSON("ordBank.json", function(data) {
 
 
 
-    /*  document.getElementById(x).onclick = function() {
-        knapper.style.visibility = 'hidden';
-
-      }*/
-
-
   neste();
 
   //})
@@ -93,21 +87,22 @@ $.getJSON("ordBank.json", function(data) {
 
 
 //onclick funksjon for alfabetet
-  $(document.body).on('click', 'button', function() {
+  $("#knapper").on('click', 'button', function() {
     //disable knappen som blir trykket
-    $(this).attr('disabled', 'disabled');
+    $(this).attr({'disabled':'disabled',"class":"active"});
+
 
 
     var gjettResultat = false;
     input = this.id;
 
-      //  var input = inpBokstav.value
-
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
         $('#t'+x).append(input);
-        gjettResultat = true;
+       gjettResultat = true;
+
           }
+
 }
     if(gjettResultat){sjekkSvar();}
     else{feil();}
@@ -130,11 +125,24 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#spill").empty();
+    $("#knapper").hide();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
+
+    for(var x = 0;x<ordArray.length;x++){
+      if(ordArray[x] == ordArray[x]){
+        if ($('#t'+x).is(':empty')){
+      //    $(ordArray[x]).attr("id","feilbokstaver")
+          $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
+        }
+
+
+
 }
 }
+}
+}
+
 /*
 function Restart() {
   document.getElementById("reset").onclick = function(){

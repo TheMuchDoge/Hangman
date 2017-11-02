@@ -18,7 +18,7 @@ var valg = Number(Math.floor((Math.random() * ordAlt.length)));
 var ord = ordAlt[valg];
 
 ordArray=ord.split("");
-  
+
 for(i=0;i<alphabet.length;i++){
     $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i]+'</button>');
   }
@@ -36,14 +36,14 @@ function neste() {
 
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
-  
+
   for(j=0;j<bokstaver;j++){
       $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
   }
 
 //onclick funksjon for alfabetet
-  $(document.body).on('click', 'button', function() {
+  $("#knapper").on('click', 'button', function() {
     //disable knappen som blir trykket
     $(this).attr('disabled', 'disabled');
 
@@ -82,8 +82,14 @@ function feil() {
     $("#spill").empty();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
-  }
-}
+    for(var x = 0;x<ordArray.length;x++){
+      if(ordArray[x] == ordArray[x]){
+        if ($('#t'+x).is(':empty')){
+            $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');}
+          }
+        }
+      }
+    }
 
 
 function canvas(){
@@ -257,34 +263,11 @@ function kran() {
 
 function byttStil(stil){
   document.styleSheets[0].href = "ressurser/" + stil + ".css";
+<<<<<<< HEAD
   document.getElementById("cssLink").href = "ressurser/vanilla.css";
 
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   
+=======
+>>>>>>> fa4f25845f28cda2a8fd78850d57345b8f7b9b44
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
