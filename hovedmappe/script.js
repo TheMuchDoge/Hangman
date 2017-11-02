@@ -43,7 +43,7 @@ function neste() {
   }
 
 //onclick funksjon for alfabetet
-  $(document.body).on('click', 'button', function() {
+  $("#knapper").on('click', 'button', function() {
     //disable knappen som blir trykket
     $(this).attr('disabled', 'disabled');
 
@@ -82,9 +82,15 @@ function feil() {
     $("#spill").empty();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
+    for(var x = 0;x<ordArray.length;x++){
+      if(ordArray[x] == ordArray[x]){
+        if ($('#t'+x).is(':empty')){
+            $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
+        }
   }
 }
-
+}
+}
 
 function canvas(){
   var canvas = document.querySelector('canvas');
