@@ -111,7 +111,8 @@ button:disabled {
   pointer-events: none;
 }
 
-.Hangmanlogo {
+#overskrift {
+  text-transform: uppercase;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;

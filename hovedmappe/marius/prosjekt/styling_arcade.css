@@ -139,8 +139,7 @@ button:hover::after, button:hover::before {
    pointer-events: none;
  }
 
-#overskrift {
-    text-transform: uppercase;
+.Hangmanlogo {
     /*-webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;*/
     /*box-sizing: content-box;*/
@@ -152,7 +151,6 @@ button:hover::after, button:hover::before {
     text-overflow: ellipsis;
     color: rgba(21,171,195,1.0);
     text-shadow: 0 0 5px rgba(21,171,195,0.7);
-    text-transform: uppercase;
 }
 
 
