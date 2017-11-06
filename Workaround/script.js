@@ -110,7 +110,7 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#spill").empty();
+    $("#knapper").hide();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
     for(var x = 0;x<ordArray.length;x++){

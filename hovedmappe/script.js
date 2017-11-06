@@ -79,7 +79,7 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#spill").empty();
+    $("#knapper").hide();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
     for(var x = 0;x<ordArray.length;x++){
@@ -263,8 +263,8 @@ function kran() {
 });
 
 function byttStil(stil){
-  
-  document.getElementById("cssLink").href = stil + ".css"; 
+
+  document.getElementById("cssLink").href = stil + ".css";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-  
+
 }
