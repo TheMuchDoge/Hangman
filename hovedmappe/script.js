@@ -268,3 +268,7 @@ function byttStil(stil){
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
 
 }
+
+
+
+
