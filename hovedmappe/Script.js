@@ -331,6 +331,7 @@ function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+  document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
 }
 
 function muteLyd(){
