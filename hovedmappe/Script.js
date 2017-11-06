@@ -3,10 +3,8 @@ $(function(){
 });
 function onPageLoad(){
 
-$("#spill").empty();
-$("#knapper").empty();
-$("#knapper").show()
-$('#spill').append('<button id="reset" onClick="onPageLoad()">Restart</button>');
+
+
 $('#spill').append('<div id="livTekst"></div>');
 var ordBank=new Array;
 var ordArray=new Array;
@@ -43,7 +41,7 @@ function neste() {
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
-
+$('#spill').append('<button id="reset" onClick="restart()">Restart</button>');
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -52,6 +50,8 @@ function neste() {
     }
 
   }
+
+
 
 function tast(event) {
 
@@ -306,4 +306,12 @@ function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+}
+function restart() {
+  $("#spill").empty();
+  $("#knapper").empty();
+  $("#knapper").show()
+
+  onPageLoad()
+
 }

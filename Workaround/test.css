@@ -1,17 +1,17 @@
-#bokstav{
-  margin: auto;
-  text-align: center;
-  max-width: 40%;
+#bokstav {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
 }
-.tile{
-  height: 40px;
-  width: 40px;
-  margin-right: 20px;
-  text-align: center;
-  font-size: 30px;
-  padding-top: 5px;
+
+#bokstav .tile {
+  position: relative;
+  list-style: none;
+  margin: 0;
   display: inline-block;
-  border: 3px solid black;
+  padding: 0 10px;
+  font-size:1.6em;
 }
 #spill{
 text-align: center;
