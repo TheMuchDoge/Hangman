@@ -1,5 +1,12 @@
-$(document).ready(function ()  {
-$(document).keypress(tast)
+$(function(){
+    onPageLoad();
+});
+function onPageLoad(){
+
+$("#spill").empty();
+$("#knapper").empty();
+$('#spill').append('<button id="reset" onClick="onPageLoad()">Restart</button>');
+$('#spill').append('<div id="livTekst"></div>');
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -112,7 +119,6 @@ function feil() {
   if (liv<1) {
     $("#knapper").hide();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-    $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
@@ -291,8 +297,8 @@ function kran() {
   c.lineTo(150,100);
   c.stroke();
   }
-});
-  
+};
+
   //***************** HER JOBBER ELIAS
 
 function byttStil(stil){
@@ -300,29 +306,3 @@ function byttStil(stil){
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
