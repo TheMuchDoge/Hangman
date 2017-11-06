@@ -5,6 +5,7 @@ function onPageLoad(){
 
 $("#spill").empty();
 $("#knapper").empty();
+$("#knapper").show()
 $('#spill').append('<button id="reset" onClick="onPageLoad()">Restart</button>');
 $('#spill').append('<div id="livTekst"></div>');
 var ordBank=new Array;
