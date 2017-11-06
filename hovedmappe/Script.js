@@ -24,6 +24,7 @@ var ordAlt = ["damer", "spill", "datamaskin"];
 var valg = Number(Math.floor((Math.random() * ordAlt.length)));
 var ord = ordAlt[valg];
 
+
 ordArray=ord.split("");
 
 for(i=0;i<alphabet.length;i++){
@@ -36,17 +37,17 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
-  var n = ord.length;
+
   // ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
-$('#spill').append('<button id="reset" onClick="restart()">Restart</button>');
+$('#spill').append('<button id="reset">Restart</button>');
 $('#reset').on("click",function (){
   $("#spill").empty();
   $("#knapper").empty();
   $("#knapper").show()
-
+  ordArray.length = 0
   onPageLoad()
 
 })
@@ -139,7 +140,7 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#knapper").hide();
+
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
