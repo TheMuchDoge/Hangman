@@ -11,11 +11,10 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      <script src="script.js"></script>
-     <!-- <embed id="Audiotrack" src="Arcade.mp3" autostart="true" loop="true"> -->
    </head>
    <body id="bodybody" onload="byttStil(startStil)">
       <nav class="navbar navbar-inverse">
-        <a href="index.html"><p class="navbar-text">Hangman</p></a>
+        <a href="index.html"><p class="navbar-text">Forside</p></a>
           <ul class="nav navbar-nav">
             <li><a onclick="byttStil('bit')">8-bit</a></li>
             <li><a onclick="byttStil('arcade')">Arcade</a></li>
@@ -31,18 +30,13 @@
       <button onclick="muteLyd()">MUTE</button>
       <h1 id="overskrift">Error</h1>
       <div id="spill"></div>
-      <!-- <div id="livTekst">Liv igjen: </div> -->
-      <!-- <div id="ordValgTekst">Ordet: </div> -->
-      <!-- <div id="feilBokstavTekst">Feil bokstaver: </div> -->
-      </div>
-      <canvas width="800" height="600">Din nettleser støtter ikke canvas-elementet</canvas>
+      <canvas width="800" height="600">Nettleseren din støtter ikke canvas-elementet.</canvas>
       <div id="knapper"></div>
    </body>
  </html>
 <!--
 Fixlist:
   - 8-bit-overskrift
-  - Endre <title>
   - game over bug
   - dupliseringbug
 -->
