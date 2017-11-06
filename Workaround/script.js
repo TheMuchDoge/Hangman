@@ -42,6 +42,7 @@ function neste() {
   //ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
   //feilBokstavTekst.innerHTML = input & input2
+  $('#spill').append('<button id="reset" onClick="onPageLoad()">Restart</button>');
   kran();
 
   //ska jo egentlig lag boksa, men vetdafaen
@@ -129,7 +130,7 @@ function feil() {
   if (liv<1) {
     $("#knapper").hide();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-    $('#spill').append('<button id="reset" onClick="onPageLoad()">Restart</button>');
+
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
