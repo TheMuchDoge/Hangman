@@ -328,3 +328,25 @@ function byttStil(stil){
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
 }
+
+    function muteLyd(){
+      var lyd = document.getElementById("lydSpor");
+      if(lydSpor.muted == false){
+        lydSpor.muted = true;
+      }else{
+        lydSpor.muted = false;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
