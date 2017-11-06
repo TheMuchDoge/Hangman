@@ -33,7 +33,7 @@ function neste() {
   var n = ord.length;
   // ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
-  feilBokstavTekst.innerHTML = input & input2
+  // feilBokstavTekst.innerHTML = input & input2
   kran();
 
   //ska jo egentlig lag boksa, men vetdafaen
