@@ -1,57 +1,31 @@
- <!DOCTYPE html>
- <html id="htmlhtml">
-   <head>
-     <meta charset="UTF-8">
-     <title>Hangman Arcade</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-     <link id="cssLink" rel="stylesheet" type="text/css" href="styling_bit.css">
-     <link async href="http://fonts.googleapis.com/css?family=Anton" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-     <link async href="http://fonts.googleapis.com/css?family=Warnes" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <script src="script.js"></script>
-     <!-- <embed id="Audiotrack" src="Arcade.mp3" autostart="true" loop="true"> -->
-   </head>
-   <body id="bodybody">
-      <nav class="navbar navbar-inverse">
-        <p class="navbar-text">Hangman</p>
-          <ul class="nav navbar-nav">
-            <li><a onclick="byttStil('bit')">8-bit</a></li>
-            <li><a onclick="byttStil('vanilla')">Vanilla</a></li>
-            <li><a onclick="byttStil('arcade')">Arcade</a></li>
-          </ul>
-      </nav>
-      <div id="player">
-       <audio id="lydSpor" controls autoplay loop>
-         <source src="" type="audio/mp3">
-         Nettleseren din støtter ikke lydavspilling.
-       </audio>
-     </div>
-     <h1 id="overskrift">Error</h1>
-     <div id="spill"></div>
-     <div id="livTekst">Liv igjen: </div>
-     <!-- <div id="ordValgTekst">Ordet: </div> -->
-     <!-- <div id="feilBokstavTekst">Feil bokstaver: </div> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Forside</title>
+    <link id="cssLink" rel="stylesheet" type="text/css" href="styling_index.css">
+  </head>
+  <body>
 
-     </div>
+    <h1 id="hangmanlogo">Hangman</h1>
+    <h2>Velg versjon:</h2>
+    <span id="vanilla">Vanilla</span><span id="bit">8-Bit</span><span id="arcade">Arcade</span><br>
+    <a href="HangmanVanilla.html">
+    <img src="ressurser/vanilla_bilde.png" id="openVanilla" onclick="openVanilla()">
+    </a>
+    <a href="HangmanBit.html">
+    <img src="ressurser/bit.png" id="openBit" onclick="openBit()">
+    </a>
+    <a href="HangmanArcade.html">
+    <img src="ressurser/arcade.png" id="openArcade" onclick="openArcade()">
+    </a>
 
-     <canvas width="800" height="600">Din nettleser støtter ikke canvas-elementet</canvas>
-<div id="knapper"></div>
+<script>
+function openVanilla() {
 
-   </body>
- </html>
+}
 
+</script>
+  </body>
+</html>
 
-
-
-
-
-
-
-<!--
-Fixlist:
-  - Muteknapp
-  - Musikk fra starten, overskrift
-  - 8-bit-overskrift
--->
