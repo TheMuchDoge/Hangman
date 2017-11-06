@@ -292,9 +292,37 @@ function kran() {
   c.stroke();
   }
 });
+  
+  //***************** HER JOBBER ELIAS
 
 function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

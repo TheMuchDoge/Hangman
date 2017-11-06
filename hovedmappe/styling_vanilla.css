@@ -112,7 +112,7 @@ button:disabled {
 }
 
 #overskrift {
-  text-transform: uppercase;
+    text-transform: uppercase;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
