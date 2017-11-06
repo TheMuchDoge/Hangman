@@ -13,7 +13,7 @@
      <script src="script.js"></script>
      <!-- <embed id="Audiotrack" src="Arcade.mp3" autostart="true" loop="true"> -->
    </head>
-   <body id="bodybody">
+   <body id="bodybody" onload="byttStil(startStil)">
       <nav class="navbar navbar-inverse">
         <a href="index.html"><p class="navbar-text">Hangman</p></a>
           <ul class="nav navbar-nav">
@@ -27,26 +27,46 @@
          <source src="" type="audio/mp3">
          Nettleseren din støtter ikke lydavspilling.
        </audio>
-     </div>
-     <button onclick="muteLyd()">MUTE</button>
-     <h1 id="overskrift">Error</h1>
-     <div id="spill"></div>
-    <!-- <div id="livTekst">Liv igjen: </div> -->
-     <!-- <div id="ordValgTekst">Ordet: </div> -->
-     <!-- <div id="feilBokstavTekst">Feil bokstaver: </div> -->
-
-     </div>
-
-     <canvas width="800" height="600">Din nettleser støtter ikke canvas-elementet</canvas>
-<div id="knapper"></div>
-
+      </div>
+      <button onclick="muteLyd()">MUTE</button>
+      <h1 id="overskrift">Error</h1>
+      <div id="spill"></div>
+      <!-- <div id="livTekst">Liv igjen: </div> -->
+      <!-- <div id="ordValgTekst">Ordet: </div> -->
+      <!-- <div id="feilBokstavTekst">Feil bokstaver: </div> -->
+      </div>
+      <canvas width="800" height="600">Din nettleser støtter ikke canvas-elementet</canvas>
+      <div id="knapper"></div>
    </body>
  </html>
-
-
 <!--
 Fixlist:
-  - Muteknapp
-  - Musikk fra starten, overskrift
   - 8-bit-overskrift
+  - Endre <title>
+  - game over bug
+  - dupliseringbug
 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
