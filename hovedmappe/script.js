@@ -54,47 +54,60 @@ $('#reset').on("click",function (){
   var bokstaver=ord.length;
 
   for(j=0;j<bokstaver;j++){
-      $('#bokstav').append('<div class="tile" id=t'+j+' maxlength="1"></div>');
+      $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
 
   }
 
 
 
-function tast(event) {
+  $(this).keypress(function(event){
+    if(event.keyCode>64 && event.keyCode<121){
+          input = String.fromCharCode (event.keyCode).toLowerCase();
+          forsoktboks = false
+          riktig=false
+          $("#event.charCode").attr('disabled', 'disabled');
 
-  var input2 = String.fromCharCode (event.keyCode).toLowerCase();
-
-    var gjettResultat = false;
-
-      for(i=0;i<forsokt.length;i++){
-        if(input2==forsokt[i]){
-          forsokt.push(input2)
-        } else {
-
-
-
-
-          for(var x = 0;x<ordArray.length;x++){
-            if(input2 == ordArray[x]){
-              $('#t'+x).append(input2);
-              gjettResultat = true;
-                }
-              }
-              if(gjettResultat){sjekkSvar();}
-              else{feil();}
-            }
+              for(i=0;i<forsokt.length;i++){
+                if(input==forsokt[i]){
+                  forsoktboks=true
           }
+  }
+  
+  if (!forsoktboks) {
+    forsokt.push(input);
+    sjekk()
+
         }
+      }
+    });
 
 
-//onclick funksjon for alfabetet
-  $("#knapper").on('click', 'button', function() {
-    //disable knappen som blir trykket
-    $(this).attr('disabled', 'disabled');
+    $("#knapper").on('click', 'button', function() {
+  $(this).attr('disabled', 'disabled');
+      input = this.id;
+      var forsoktboks = false
+      for(i=0;i<forsokt.length;i++){
+        if(input==forsokt[i]){
+          forsoktboks=true
+        }
+      }
+          if (!forsoktboks) {
+            forsokt.push(input);
+            sjekk()
 
-    var gjettResultat = false;
-    input = this.id;
+
+        }
+    })
+
+
+
+  //onclick funksjon for alfabetet
+    function sjekk() {
+
+
+      //disable knappen som blir trykket
+      var gjettResultat = false;
 
       //  var input = inpBokstav.value
 
