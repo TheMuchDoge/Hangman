@@ -40,8 +40,7 @@ button:disabled {
 
 
 
-#overskrift {
-  text-transform: uppercase;
+#Hangmanlogo {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -53,6 +52,7 @@ button:disabled {
   text-overflow: clip;
   text-shadow: 5px 5px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) , 15px 14px 0 rgb(255,210,23) , 20px 20px 0 rgb(90,199,255) ;
   /*padding-bottom: 0.5em;*/
+
 
 }
 
