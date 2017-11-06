@@ -1,12 +1,13 @@
 $(document).ready(function ()  {
-
+$(document).keypress(tast)
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
 var input;
+var input2;
 var liv = 7;
-var feilBokstavTekst = document.getElementById("feilBokstavTekst");
+
 var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
 
@@ -32,6 +33,7 @@ function neste() {
   var n = ord.length;
   ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
+  feilBokstavTekst.innerHTML = input & input2
   kran();
 
   //ska jo egentlig lag boksa, men vetdafaen
@@ -40,7 +42,35 @@ function neste() {
   for(j=0;j<bokstaver;j++){
       $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
+
   }
+
+function tast(event) {
+
+  var input2 = String.fromCharCode (event.keyCode).toLowerCase();
+
+    var gjettResultat = false;
+
+      for(i=0;i<forsokt.length;i++){
+        if(input2==forsokt[i]){
+          forsokt.push(input2)
+        } else {
+
+
+
+
+          for(var x = 0;x<ordArray.length;x++){
+            if(input2 == ordArray[x]){
+              $('#t'+x).append(input2);
+              gjettResultat = true;
+                }
+              }
+              if(gjettResultat){sjekkSvar();}
+              else{feil();}
+            }
+          }
+        }
+
 
 //onclick funksjon for alfabetet
   $("#knapper").on('click', 'button', function() {
@@ -56,6 +86,7 @@ function neste() {
       if(input == ordArray[x]){
         $('#t'+x).append(input);
         gjettResultat = true;
+        forsokt.push(input)
           }
 }
     if(gjettResultat){sjekkSvar();}
@@ -264,11 +295,8 @@ function kran() {
 
 function byttStil(stil){
 
-  document.getElementById("cssLink").href = stil + ".css";
+  document.getElementById("cssLink").href = "styling_" + stil + ".css";
+
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
 
 }
-
-
-
-
