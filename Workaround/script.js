@@ -14,6 +14,8 @@ var forsokt=new Array;
 var input;
 var input2;
 var liv = 7;
+var forsoktboks;
+var riktig;
 
 //var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
@@ -38,7 +40,7 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
-  var n = ord.length;
+
   //ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
   //feilBokstavTekst.innerHTML = input & input2
@@ -57,9 +59,10 @@ function neste() {
 //  $(this).on('keypress', function(event) {
 $(this).keypress(function(event){
   if(event.keyCode>64 && event.keyCode<121){
-        var input = event.charCode;
-        var forsoktboks = false
-        var riktig=false
+        input = String.fromCharCode (event.keyCode).toLowerCase();
+        forsoktboks = false
+        riktig=false
+        $("#event.charCode").attr('disabled', 'disabled');
 
             for(i=0;i<forsokt.length;i++){
               if(input==forsokt[i]){
@@ -103,13 +106,14 @@ $(this).attr('disabled', 'disabled');
     var gjettResultat = false;
 
 
+
       //  var input = inpBokstav.value
 
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
         $('#t'+x).append(input);
         gjettResultat = true;
-        forsokt.push(input)
+
           }
 }
     if(gjettResultat){sjekkSvar();}
