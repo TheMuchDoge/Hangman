@@ -57,46 +57,51 @@ function neste() {
 //  $(this).on('keypress', function(event) {
 $(this).keypress(function(event){
   if(event.keyCode>64 && event.keyCode<121){
-        var inputValue = event.charCode;
+        var input = event.charCode;
+        var forsoktboks = false
+        var riktig=false
 
-            alert(String.fromCharCode(event.which));
+            for(i=0;i<forsokt.length;i++){
+              if(input==forsokt[i]){
+                forsoktboks=true
         }
+}
 
-    });
+if (!forsoktboks) {
+  forsokt.push(input);
+  sjekk()
 
-
-  /*var input2 = String.fromCharCode (event.keyCode).toLowerCase();
-
-    var gjettResultat = false;
-
-      for(i=0;i<forsokt.length;i++){
-        if(input2==forsokt[i]){
-          forsokt.push(input2)
-        } else {
+      }
+    }
+  });
 
 
+  $("#knapper").on('click', 'button', function() {
+$(this).attr('disabled', 'disabled');
+    input = this.id;
+    var forsoktboks = false
+    for(i=0;i<forsokt.length;i++){
+      if(input==forsokt[i]){
+        forsoktboks=true
+      }
+    }
+        if (!forsoktboks) {
+          forsokt.push(input);
+          sjekk()
 
 
-          for(var x = 0;x<ordArray.length;x++){
-            if(input2 == ordArray[x]){
-              $('#t'+x).append(input2);
-              gjettResultat = true;
-                }
-              }
-              if(gjettResultat){sjekkSvar();}
-              else{feil();}
-            }
-         }*/
+      }
+  })
 
 
 
 //onclick funksjon for alfabetet
-  $("#knapper").on('click', 'button', function() {
-    //disable knappen som blir trykket
-    $(this).attr('disabled', 'disabled');
+  function sjekk() {
 
+
+    //disable knappen som blir trykket
     var gjettResultat = false;
-    input = this.id;
+
 
       //  var input = inpBokstav.value
 
@@ -109,7 +114,7 @@ $(this).keypress(function(event){
 }
     if(gjettResultat){sjekkSvar();}
     else{feil();}
-  })
+  }
 
 //funksjon som sjekker om hele svaret er skrevet inn hvis en bokstav som er i ordet blir trykket.
 function sjekkSvar() {

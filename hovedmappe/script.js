@@ -42,11 +42,19 @@ function neste() {
   // feilBokstavTekst.innerHTML = input & input2
   kran();
 $('#spill').append('<button id="reset" onClick="restart()">Restart</button>');
+$('#reset').on("click",function (){
+  $("#spill").empty();
+  $("#knapper").empty();
+  $("#knapper").show()
+
+  onPageLoad()
+
+})
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
   for(j=0;j<bokstaver;j++){
-      $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
+      $('#bokstav').append('<div class="tile" id=t'+j+' maxlength="1"></div>');
     }
 
   }
@@ -306,12 +314,4 @@ function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-}
-function restart() {
-  $("#spill").empty();
-  $("#knapper").empty();
-  $("#knapper").show()
-
-  onPageLoad()
-
 }
