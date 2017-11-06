@@ -73,7 +73,7 @@ $('#reset').on("click",function (){
                   forsoktboks=true
           }
   }
-  
+
   if (!forsoktboks) {
     forsokt.push(input);
     sjekk()
@@ -120,7 +120,7 @@ $('#reset').on("click",function (){
 }
     if(gjettResultat){sjekkSvar();}
     else{feil();}
-  })
+  }
 
 //funksjon som sjekker om hele svaret er skrevet inn hvis en bokstav som er i ordet blir trykket.
 function sjekkSvar() {
