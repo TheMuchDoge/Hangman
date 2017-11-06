@@ -1,0 +1,62 @@
+html {
+  height: 100%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+
+body {
+  width: auto;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 100% 110%;
+}
+
+
+/*#bit {
+  position: fixed;
+  left: 50%;
+}
+#arcade {
+  position: fixed;
+  left: 75%;
+}*/
+
+
+img {
+  /*border:4px solid;*/
+  width:300px;
+  height:200px;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  /*text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;*/
+}
+
+#hangmanlogo {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+#openVanilla {
+  position: fixed;
+  left: 10%;
+}
+
+#openBit, #bit {
+  position: fixed;
+  left: 40%;
+}
+
+#openArcade, #arcade {
+  position: fixed;
+  left: 70%;
+}
