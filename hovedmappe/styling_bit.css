@@ -12,8 +12,7 @@ body {
   background: url("Ressurser/8-bit.png");
   width: auto;
   background-repeat: no-repeat;
-  /*position: relative;*/
-  position: static;
+  position: relative;
   background-size: 100% 110%;
 }
 
@@ -82,7 +81,9 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 35%;
+  /*top: 35%;*/
+  bottom: 0;
+  right: 50%;
   height: 60%;
   width: 50%;
 }
