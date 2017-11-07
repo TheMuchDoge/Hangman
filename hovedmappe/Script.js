@@ -22,13 +22,13 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 
 var ordAlt = ["damer", "spill", "datamaskin"];
 var valg = Number(Math.floor((Math.random() * ordAlt.length)));
-var ord = ordAlt[valg];
+var ord = ordAlt[valg].toUpperCase();
 
 
 ordArray=ord.split("");
 
 for(i=0;i<alphabet.length;i++){
-    $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i].toUpperCase()+'</button>');
+    $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
   }
 
 neste();
@@ -64,7 +64,7 @@ $('#reset').on("click",function (){
 
   $(this).keypress(function(event){
     if(event.keyCode>64 && event.keyCode<121){
-          input = String.fromCharCode (event.keyCode).toLowerCase();
+          input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
           riktig=false
           $("#event.charCode").attr('disabled', 'disabled');
