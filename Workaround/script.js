@@ -26,7 +26,7 @@ var ord = ordAlt[valg].toUpperCase();
 
 
 ordArray=ord.split("");
-
+$('#spill').append('<div id="knapper"></div>');
 for(i=0;i<alphabet.length;i++){
     $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
   }
@@ -42,15 +42,7 @@ function neste() {
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
-$('#spill').append('<button id="reset">Restart</button>');
-$('#reset').on("click",function (){
-  $("#spill").empty();
-  $("#knapper").empty();
-  $("#knapper").show()
-  ordArray.length = 0
-  onPageLoad()
 
-})
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -59,6 +51,20 @@ $('#reset').on("click",function (){
     }
 
   }
+  $('#spill').append('<button id="reset">Restart</button>');
+  $('#reset').on("click",function (){
+    while (spill.hasChildNodes()) {
+    spill.removeChild(spill.lastChild);
+  }
+
+  /*  $("#spill").empty();
+    $("#knapper").empty();*/
+    ordArray.length = 0
+    $("#knapper").show()
+
+    onPageLoad()
+
+  })
 
 
 
@@ -298,6 +304,7 @@ function kran() {
   var c = canvas.getContext('2d');
 
   //Tegning av krana
+  c.clearRect(0,0,canvas.width,canvas.height);
   c.beginPath();
   c.lineWidth=13;
   c.moveTo(50,500);
@@ -324,10 +331,10 @@ function kran() {
 
   //***************** HER JOBBER ELIAS
 
-var hash = location.hash;
-var startStil = location.hash.match(/#(\w+)/)[1];
+//var hash = location.hash;
+//var startStil = location.hash.match(/#(\w+)/)[1];
 
-function byttStil(stil){
+/*function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
@@ -341,4 +348,4 @@ function muteLyd(){
   }else{
     lydSpor.muted = false;
   }
-}
+}*/
