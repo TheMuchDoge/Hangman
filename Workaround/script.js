@@ -42,8 +42,9 @@ function neste() {
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
-$('#spill').append('<button id="reset">Restart</button>');
-$('#reset').on("click",function (){
+  $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
+//$('#spill').append('<button id="reset">Restart</button>');
+/*$('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
   spill.removeChild(spill.lastChild);
   }
@@ -53,7 +54,7 @@ $('#reset').on("click",function (){
     ordArray.length = 0
   onPageLoad()
 
-})
+})*/
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 

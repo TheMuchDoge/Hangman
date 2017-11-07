@@ -41,6 +41,8 @@ function neste() {
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
+  $('#spill').append('<button id="reset" onClick="window.location.reload(true)">Restart</button>');
+  /* RESET KNAPP SOM IT FUNKE *ENNO*
 $('#spill').append('<button id="reset">Restart</button>');
 $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
@@ -53,7 +55,9 @@ $('#reset').on("click",function (){
   onPageLoad()
 
 })
+*/
   //ska jo egentlig lag boksa, men vetdafaen
+
   var bokstaver=ord.length;
 
   for(j=0;j<bokstaver;j++){
