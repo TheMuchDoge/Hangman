@@ -342,14 +342,3 @@ function muteLyd(){
     lydSpor.muted = false;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
