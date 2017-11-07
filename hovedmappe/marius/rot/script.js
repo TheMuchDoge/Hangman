@@ -1,5 +1,11 @@
-$(document).ready(function ()  {
-$(document).keypress(tast)
+$(function(){
+    onPageLoad();
+});
+function onPageLoad(){
+
+
+
+$('#spill').append('<div id="livTekst"></div>');
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -8,7 +14,7 @@ var input;
 var input2;
 var liv = 7;
 
-var ordValgTekst = document.getElementById("ordValgTekst");
+// var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
@@ -17,6 +23,7 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 var ordAlt = ["damer", "spill", "datamaskin"];
 var valg = Number(Math.floor((Math.random() * ordAlt.length)));
 var ord = ordAlt[valg];
+
 
 ordArray=ord.split("");
 
@@ -30,12 +37,20 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
-  var n = ord.length;
-  ordValgTekst.innerHTML += ord;
-  livigjen.innerHTML = liv
-  feilBokstavTekst.innerHTML = input & input2
-  kran();
 
+  // ordValgTekst.innerHTML += ord;
+  livigjen.innerHTML = liv
+  // feilBokstavTekst.innerHTML = input & input2
+  kran();
+$('#spill').append('<button id="reset">Restart</button>');
+$('#reset').on("click",function (){
+  $("#spill").empty();
+  $("#knapper").empty();
+  $("#knapper").show()
+  ordArray.length = 0
+  onPageLoad()
+
+})
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -45,40 +60,55 @@ function neste() {
 
   }
 
-function tast(event) {
-
-  var input2 = String.fromCharCode (event.keyCode).toLowerCase();
-
-    var gjettResultat = false;
-
-      for(i=0;i<forsokt.length;i++){
-        if(input2==forsokt[i]){
-          forsokt.push(input2)
-        } else {
 
 
+  $(this).keypress(function(event){
+    if(event.keyCode>64 && event.keyCode<121){
+          input = String.fromCharCode (event.keyCode).toLowerCase();
+          forsoktboks = false
+          riktig=false
+          $("#event.charCode").attr('disabled', 'disabled');
 
-
-          for(var x = 0;x<ordArray.length;x++){
-            if(input2 == ordArray[x]){
-              $('#t'+x).append(input2);
-              gjettResultat = true;
-                }
-              }
-              if(gjettResultat){sjekkSvar();}
-              else{feil();}
-            }
+              for(i=0;i<forsokt.length;i++){
+                if(input==forsokt[i]){
+                  forsoktboks=true
           }
+  }
+
+  if (!forsoktboks) {
+    forsokt.push(input);
+    sjekk()
+
         }
+      }
+    });
 
 
-//onclick funksjon for alfabetet
-  $("#knapper").on('click', 'button', function() {
-    //disable knappen som blir trykket
-    $(this).attr('disabled', 'disabled');
+    $("#knapper").on('click', 'button', function() {
+  $(this).attr('disabled', 'disabled');
+      input = this.id;
+      var forsoktboks = false
+      for(i=0;i<forsokt.length;i++){
+        if(input==forsokt[i]){
+          forsoktboks=true
+        }
+      }
+          if (!forsoktboks) {
+            forsokt.push(input);
+            sjekk()
 
-    var gjettResultat = false;
-    input = this.id;
+
+        }
+    })
+
+
+
+  //onclick funksjon for alfabetet
+    function sjekk() {
+
+
+      //disable knappen som blir trykket
+      var gjettResultat = false;
 
       //  var input = inpBokstav.value
 
@@ -91,7 +121,7 @@ function tast(event) {
 }
     if(gjettResultat){sjekkSvar();}
     else{feil();}
-  })
+  }
 
 //funksjon som sjekker om hele svaret er skrevet inn hvis en bokstav som er i ordet blir trykket.
 function sjekkSvar() {
@@ -110,9 +140,8 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#knapper").hide();
+
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-    $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
@@ -267,36 +296,44 @@ if (liv==1) {
 function kran() {
   var canvas = document.querySelector('canvas');
   var c = canvas.getContext('2d');
-
+  var img1 = new Image();
+  img1.src = "8bit_bilde1.gif"
+  c.drawimage(img1,0,0)
   //Tegning av krana
-  c.beginPath();
-  c.lineWidth=13;
-  c.moveTo(50,500);
-  c.lineTo(100,450);
-  c.lineTo(100,100);
-  c.lineTo(305,100);
-  c.stroke()
-  c.lineWidth=4;
-  c.moveTo(300,100);
-  c.lineTo(300,175);
-  c.stroke();
-  c.beginPath();
-  c.lineWidth=13;
-  c.moveTo(150,500);
-  c.lineTo(100,450);
-  c.stroke();
-  c.beginPath();
-  c.lineWidth=7;
-  c.moveTo(100,150);
-  c.lineTo(150,100);
-  c.stroke();
+  // c.beginPath();
+  // c.lineWidth=13;
+  // c.moveTo(50,500);
+  // c.lineTo(100,450);
+  // c.lineTo(100,100);
+  // c.lineTo(305,100);
+  // c.stroke()
+  // c.lineWidth=4;
+  // c.moveTo(300,100);
+  // c.lineTo(300,175);
+  // c.stroke();
+  // c.beginPath();
+  // c.lineWidth=13;
+  // c.moveTo(150,500);
+  // c.lineTo(100,450);
+  // c.stroke();
+  // c.beginPath();
+  // c.lineWidth=7;
+  // c.moveTo(100,150);
+  // c.lineTo(150,100);
+  // c.stroke();
   }
-});
+};
+
+  //***************** HER JOBBER ELIAS
+
+var hash = location.hash;
+var startStil = location.hash.match(/#(\w+)/)[1];
 
 function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
-  document.getElementById("lydSpor").src = "Ressurser/" + stil + ".mp3";
+  document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+  document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
 }
 
 function muteLyd(){

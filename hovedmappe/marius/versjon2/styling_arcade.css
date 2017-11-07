@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-image: url("Ressurser/Arcadebakgrunn.jpeg");
+  background-image: url("ressurser/arcade.png");
   width: auto;
   background-repeat: no-repeat;
   position: relative;
@@ -93,13 +93,10 @@ button::after, button::before {
  bottom: 0;
  content: " ";
  display: block;
- /*margin: 15px auto;*/
  position: relative;
  transition: all 280ms ease-in-out 0s;
  width: 0;
  box-shadow: 0px 0px 0px #22AFCA;
- /*padding-left: 2px;
- padding-right: 2px;*/
 }
 
 
@@ -118,15 +115,12 @@ button:hover::after, button:hover::before {
  }
 
 #overskrift {
-    /*-webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;*/
-    /*box-sizing: content-box;*/
+    text-transform: uppercase;
     border: none;
     font-size: 84px;
     font-family: "Bitstream Vera Sans Mono";
     text-align: center;
     color: rgba(21,171,195,1.0);
-    text-transform: uppercase;
     text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
     transition: all 280ms ease-in-out 0s;
 }
@@ -144,16 +138,6 @@ button:hover::after, button:hover::before {
   font-size: 60px;
 }
 
-/*#reset {
-  color: rgba(21,171,195,1.0);
-  text-shadow: 0 0 5px rgba(21,171,195,0.7);
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60%;
-  font-size: 60px;
-}*/
 
 #Trongif {
   position: fixed;

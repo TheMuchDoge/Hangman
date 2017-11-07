@@ -4,27 +4,38 @@
     <meta charset="utf-8">
     <title>Hangman</title>
     <link id="cssLink" rel="stylesheet" type="text/css" href="styling_index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
 
-    <h1 id="hangmanlogo">Hangman</h1>
+    <div id="header">
+    <h1>Hangman</h1>
+
+  </div>
     <h2>Velg versjon:</h2>
-    <span id="vanilla">Vanilla</span><span id="bit">8-Bit</span><span id="arcade">Arcade</span><br>
-    <a href="HangmanVanilla.html">
-    <img src="Ressurser/vanilla_bilde.png" id="openVanilla" onclick="openVanilla">
+    <span id="classic">Classic</span><span id="bit">8-Bit</span><span id="arcade">Arcade</span><br>
+
+    <a href="index.html">
+    <img src="Ressurser/vanilla_bilde.png" id="openClassic" onclick="openClassic">
     </a>
-    <a href="HangmanBit.html">
+    <a href="index.html">
     <img src="Ressurser/8_bit_bilde.png" id="openBit" onclick="openBit()">
     </a>
-    <a href="HangmanArcade.html">
+    <a href="index.html">
     <img src="Ressurser/arcade_bilde.png" id="openArcade" onclick="openArcade()">
     </a>
 
-<script>
-function openVanilla() {
 
-}
+    <script>
+        function byttStil(stil){
+          document.getElementById("cssLink").href = "styling_" + stil + ".css";
+          document.getElementById("overskrift").innerHTML = stil + " hangman";
+          document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+        }
+    </script>
 
-</script>
+
   </body>
 </html>
