@@ -12,7 +12,7 @@ var forsokt=new Array;
 //var ord;
 var input;
 var input2;
-var liv = 7;
+var liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
@@ -37,8 +37,8 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
+  liv = 7;
 
-  // ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
@@ -47,8 +47,10 @@ $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
   spill.removeChild(spill.lastChild);
   }
-  $("#knapper").show()
-  ordArray.length = 0
+  while (knapper.hasChildNodes()) {
+  knapper.removeChild(knapper.lastChild);
+  }
+    ordArray.length = 0
   onPageLoad()
 
 })
