@@ -294,9 +294,16 @@ function kran() {
 });
 
 function byttStil(stil){
-
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
+  document.getElementById("overskrift").innerHTML = stil + " hangman";
+  document.getElementById("lydSpor").src = "Ressurser/" + stil + ".mp3";
+}
 
-  document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-
+function muteLyd(){
+  var lyd = document.getElementById("lydSpor");
+  if(lydSpor.muted == false){
+    lydSpor.muted = true;
+  }else{
+    lydSpor.muted = false;
+  }
 }

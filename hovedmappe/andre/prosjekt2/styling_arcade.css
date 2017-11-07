@@ -117,7 +117,7 @@ button:hover::after, button:hover::before {
    pointer-events: none;
  }
 
-.Hangmanlogo {
+#overskrift {
     /*-webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;*/
     /*box-sizing: content-box;*/
