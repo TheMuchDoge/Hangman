@@ -26,7 +26,7 @@ var ord = ordAlt[valg].toUpperCase();
 
 
 ordArray=ord.split("");
-
+$('#spill').append('<div id="knapper"></div>');
 for(i=0;i<alphabet.length;i++){
     $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
   }

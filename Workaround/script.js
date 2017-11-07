@@ -12,7 +12,7 @@ var forsokt=new Array;
 //var ord;
 var input;
 var input2;
-var liv = 7;
+var liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
@@ -26,7 +26,7 @@ var ord = ordAlt[valg].toUpperCase();
 
 
 ordArray=ord.split("");
-$('#spill').append('<div id="knapper"></div>');
+
 for(i=0;i<alphabet.length;i++){
     $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
   }
@@ -37,12 +37,23 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
+  liv = 7;
 
-  // ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
   // feilBokstavTekst.innerHTML = input & input2
   kran();
+$('#spill').append('<button id="reset">Restart</button>');
+$('#reset').on("click",function (){
+  while (spill.hasChildNodes()) {
+  spill.removeChild(spill.lastChild);
+  }
+  while (knapper.hasChildNodes()) {
+  knapper.removeChild(knapper.lastChild);
+  }
+    ordArray.length = 0
+  onPageLoad()
 
+})
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -51,20 +62,6 @@ function neste() {
     }
 
   }
-  $('#spill').append('<button id="reset">Restart</button>');
-  $('#reset').on("click",function (){
-    while (spill.hasChildNodes()) {
-    spill.removeChild(spill.lastChild);
-  }
-
-  /*  $("#spill").empty();
-    $("#knapper").empty();*/
-    ordArray.length = 0
-    $("#knapper").show()
-
-    onPageLoad()
-
-  })
 
 
 
@@ -330,11 +327,11 @@ function kran() {
 };
 
   //***************** HER JOBBER ELIAS
+/*
+var hash = location.hash;
+var startStil = location.hash.match(/#(\w+)/)[1];
 
-//var hash = location.hash;
-//var startStil = location.hash.match(/#(\w+)/)[1];
-
-/*function byttStil(stil){
+function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
@@ -348,4 +345,5 @@ function muteLyd(){
   }else{
     lydSpor.muted = false;
   }
-}*/
+}
+*/
