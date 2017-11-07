@@ -12,7 +12,6 @@ var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
 var input;
-var input2;
 var liv = 7;
 var forsoktboks;
 var riktig;
@@ -31,7 +30,7 @@ var ord = ordAlt[valg];
 ordArray=ord.split("");
 $('#spill').append('<div id="knapper"></div>');
 for(i=0;i<alphabet.length;i++){
-    $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i]+'</button>');
+      $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i].toUpperCase()+'</button>');
   }
 
 neste();
@@ -71,6 +70,7 @@ $(this).keypress(function(event){
 }
 
 if (!forsoktboks) {
+
   forsokt.push(input);
   sjekk()
 
@@ -80,7 +80,7 @@ if (!forsoktboks) {
 
 
   $("#knapper").on('click', 'button', function() {
-$(this).attr('disabled', 'disabled');
+
     input = this.id;
     var forsoktboks = false
     for(i=0;i<forsokt.length;i++){
@@ -108,10 +108,10 @@ $(this).attr('disabled', 'disabled');
 
 
       //  var input = inpBokstav.value
-
+      $("#"+input).attr('disabled', 'disabled');
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
-        $('#t'+x).append(input);
+        $('#t'+x).append(input.toUpperCase());
         gjettResultat = true;
 
           }
@@ -143,7 +143,7 @@ function feil() {
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
-            $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
+            $('#t'+x).append('<span id="feilbokover">'+ordArray[x].toUpperCase()+'</span>');
         }
 
   }
