@@ -3,10 +3,9 @@ $(function(){
 });
 function onPageLoad(){
 
-$("#spill").empty();
+
+
 $('#spill').append('<div id="livTekst"></div>');
-
-
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -14,10 +13,8 @@ var forsokt=new Array;
 var input;
 var input2;
 var liv = 7;
-var forsoktboks;
-var riktig;
 
-//var ordValgTekst = document.getElementById("ordValgTekst");
+// var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
@@ -25,13 +22,13 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 
 var ordAlt = ["damer", "spill", "datamaskin"];
 var valg = Number(Math.floor((Math.random() * ordAlt.length)));
-var ord = ordAlt[valg];
+var ord = ordAlt[valg].toUpperCase();
 
 
 ordArray=ord.split("");
-$('#spill').append('<div id="knapper"></div>');
+
 for(i=0;i<alphabet.length;i++){
-    $('#knapper').append('<button id="'+alphabet[i]+'" >'+alphabet[i]+'</button>');
+    $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
   }
 
 neste();
@@ -41,12 +38,19 @@ function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
 
-  //ordValgTekst.innerHTML += ord;
+  // ordValgTekst.innerHTML += ord;
   livigjen.innerHTML = liv
-  //feilBokstavTekst.innerHTML = input & input2
-  $('#spill').append('<button id="reset" onClick="onPageLoad()">Restart</button>');
+  // feilBokstavTekst.innerHTML = input & input2
   kran();
+$('#spill').append('<button id="reset">Restart</button>');
+$('#reset').on("click",function (){
+  $("#spill").empty();
+  $("#knapper").empty();
+  $("#knapper").show()
+  ordArray.length = 0
+  onPageLoad()
 
+})
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -56,62 +60,61 @@ function neste() {
 
   }
 
-//  $(this).on('keypress', function(event) {
-$(this).keypress(function(event){
-  if(event.keyCode>64 && event.keyCode<121){
-        input = String.fromCharCode (event.keyCode).toLowerCase();
-        forsoktboks = false
-        riktig=false
-        $("#event.charCode").attr('disabled', 'disabled');
 
-            for(i=0;i<forsokt.length;i++){
-              if(input==forsokt[i]){
-                forsoktboks=true
+
+  $(this).keypress(function(event){
+    if(event.keyCode>64 && event.keyCode<121){
+          input = String.fromCharCode (event.keyCode).toUpperCase();
+          forsoktboks = false
+          riktig=false
+          $("#event.charCode").attr('disabled', 'disabled');
+
+              for(i=0;i<forsokt.length;i++){
+                if(input==forsokt[i]){
+                  forsoktboks=true
+          }
+  }
+
+  if (!forsoktboks) {
+    forsokt.push(input);
+    sjekk()
+
         }
-}
-
-if (!forsoktboks) {
-  forsokt.push(input);
-  sjekk()
-
       }
-    }
-  });
+    });
 
 
-  $("#knapper").on('click', 'button', function() {
-$(this).attr('disabled', 'disabled');
-    input = this.id;
-    var forsoktboks = false
-    for(i=0;i<forsokt.length;i++){
-      if(input==forsokt[i]){
-        forsoktboks=true
+    $("#knapper").on('click', 'button', function() {
+
+      input = this.id;
+      var forsoktboks = false
+      for(i=0;i<forsokt.length;i++){
+        if(input==forsokt[i]){
+          forsoktboks=true
+        }
       }
-    }
-        if (!forsoktboks) {
-          forsokt.push(input);
-          sjekk()
+          if (!forsoktboks) {
+            forsokt.push(input);
+            sjekk()
 
 
-      }
-  })
-
-
-
-//onclick funksjon for alfabetet
-  function sjekk() {
-
-
-    //disable knappen som blir trykket
-    var gjettResultat = false;
+        }
+    })
 
 
 
+  //onclick funksjon for alfabetet
+    function sjekk() {
+
+
+      //disable knappen som blir trykket
+      var gjettResultat = false;
+      $("#"+input).attr('disabled', 'disabled');
       //  var input = inpBokstav.value
 
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
-        $('#t'+x).append(input);
+        $('#t'+x).append(input.toUpperCase());
         gjettResultat = true;
 
           }
@@ -137,13 +140,12 @@ function feil() {
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-    $("#knapper").hide();
-    $('#spill').append('<div id="spillover">GAMEOVER!</div>');
 
+    $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
-            $('#t'+x).append('<span id="feilbokover">'+ordArray[x]+'</span>');
+            $('#t'+x).append('<span id="feilbokover">'+ordArray[x].toUpperCase()+'</span>');
         }
 
   }
@@ -155,9 +157,7 @@ function canvas(){
   var canvas = document.querySelector('canvas');
   var c = canvas.getContext('2d');
 
-
   if (liv==7) {
-
     //Hode
     c.beginPath();
     c.lineWidth=2;
@@ -322,10 +322,23 @@ function kran() {
   }
 };
 
+  //***************** HER JOBBER ELIAS
+
+var hash = location.hash;
+var startStil = location.hash.match(/#(\w+)/)[1];
+
 function byttStil(stil){
-
-  document.getElementById("cssLink").href = "stiler/" + stil + ".css";
-
+  document.getElementById("cssLink").href = "styling_" + stil + ".css";
+  document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+  document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
+}
 
+function muteLyd(){
+  var lyd = document.getElementById("lydSpor");
+  if(lydSpor.muted == false){
+    lydSpor.muted = true;
+  }else{
+    lydSpor.muted = false;
+  }
 }
