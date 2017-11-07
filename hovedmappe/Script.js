@@ -44,8 +44,9 @@ function neste() {
   kran();
 $('#spill').append('<button id="reset">Restart</button>');
 $('#reset').on("click",function (){
-  $("#spill").empty();
-  $("#knapper").empty();
+  while (spill.hasChildNodes()) {
+  spill.removeChild(spill.lastChild);
+  }
   $("#knapper").show()
   ordArray.length = 0
   onPageLoad()
