@@ -85,7 +85,6 @@ button {
   text-decoration: none;
   background: none;
   color: #22AFCA;
-  transition: all 280ms ease-in-out 0s;
 }
 
 button::after, button::before {
@@ -122,7 +121,6 @@ button:hover::after, button:hover::before {
     text-align: center;
     color: rgba(21,171,195,1.0);
     text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
-    transition: all 280ms ease-in-out 0s;
 }
 
 

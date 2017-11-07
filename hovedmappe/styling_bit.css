@@ -30,7 +30,6 @@ button {
   text-overflow: clip;
   text-shadow: 2.5px 2.5px 0 rgb(255,210,23) , 5px 5px 0 rgb(90,199,255) , 8px 8px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) ;
   background: rgba(200,54,54,0);
-  transition: all 280ms ease-in-out 0s;
 }
 
 button:disabled {
@@ -52,7 +51,6 @@ button:disabled {
   text-overflow: clip;
   text-shadow: 5px 5px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) , 15px 14px 0 rgb(255,210,23) , 20px 20px 0 rgb(90,199,255) ;
   text-transform: uppercase;
-  transition: all 280ms ease-in-out 0s;
 }
 
 
