@@ -41,10 +41,10 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 45%;
-  height: 50%;
-  width: 40%;
-
+  bottom: 0;
+  right: 50%;
+  height: 60%;
+  width: 50%;
 }
 
 
