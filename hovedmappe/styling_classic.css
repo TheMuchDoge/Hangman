@@ -42,7 +42,7 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 300px;
+  top: 45%;
   height: 50%;
   width: 40%;
 }
@@ -76,7 +76,7 @@ button {
   text-decoration: none;
   background: none;
   color: #800200;
-  transition: all 280ms ease-in-out 0s;
+  zoom: 90%;
 }
 
 

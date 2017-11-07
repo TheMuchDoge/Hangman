@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-image: url("ressurser/arcade.png");
+  background-image: url("ressurser/arcade.jpeg");
   width: auto;
   background-repeat: no-repeat;
   position: relative;
@@ -41,7 +41,7 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 300px;
+  top: 45%;
   height: 50%;
   width: 40%;
 
@@ -85,6 +85,7 @@ button {
   text-decoration: none;
   background: none;
   color: #22AFCA;
+  zoom: 90%;
 }
 
 button::after, button::before {
