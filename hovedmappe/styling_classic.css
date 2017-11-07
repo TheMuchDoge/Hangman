@@ -79,15 +79,6 @@ button {
   transition: all 280ms ease-in-out 0s;
 }
 
-button:hover {
-  /*background: #000000;
-  background-image: -webkit-linear-gradient(top, #000000, #f0f0f0);
-  background-image: -moz-linear-gradient(top, #000000, #f0f0f0);
-  background-image: -ms-linear-gradient(top, #000000, #f0f0f0);
-  background-image: -o-linear-gradient(top, #000000, #f0f0f0);
-  background-image: linear-gradient(to bottom, #000000, #f0f0f0);
-  text-decoration: none;*/
-}
 
 button:disabled {
   opacity: 0.5;
