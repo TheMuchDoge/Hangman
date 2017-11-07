@@ -144,3 +144,9 @@ button:hover::after, button:hover::before {
   left: 80%;
   zoom: 25%;
 }
+
+#livTekst{
+  position:absolute;
+  left:230px;
+  top:300px;
+}
