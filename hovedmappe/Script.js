@@ -298,6 +298,7 @@ function kran() {
   var c = canvas.getContext('2d');
 
   //Tegning av krana
+  c.clearRect(0,0,canvas.width,canvas.height);
   c.beginPath();
   c.lineWidth=13;
   c.moveTo(50,500);
