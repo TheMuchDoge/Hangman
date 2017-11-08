@@ -148,7 +148,7 @@ function feil() {
   if (liv<1) {
 
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-    $(document).on("keypress", tastatur);
+    $(document).off("keypress", tastatur);
     while (knapper.hasChildNodes()) {
     knapper.removeChild(knapper.lastChild);}
     for(var x = 0;x<ordArray.length;x++){
