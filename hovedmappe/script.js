@@ -13,7 +13,7 @@ var forsokt=new Array;
 var input;
 var c;
 var canvas;
-var liv;
+let liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
 var livigjen = document.getElementById("livTekst")
@@ -37,8 +37,9 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
-  liv = 7;
-  livigjen.innerHTML = liv
+  liv=7;
+$('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
+
   $(document).on("keyup", tastatur);
 
   kran();
@@ -146,7 +147,7 @@ function sjekkSvar() {
 function feil() {
   canvasTegn();
   liv-=1
-  livigjen.innerHTML = liv
+  livTekst.innerHTML = "Du har bare " + liv + " liv igjen!";
   if (liv<1) {
     skruAvInput();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
