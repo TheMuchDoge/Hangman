@@ -13,7 +13,7 @@ var forsokt=new Array;
 var input;
 var c;
 var canvas;
-var liv;
+let liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
 
@@ -45,9 +45,9 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
   // feilBokstavTekst.innerHTML = input & input2
   kran();
 
-  $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
-//$('#spill').append('<button id="reset">Restart</button>');
-/*$('#reset').on("click",function (){
+  //$('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
+$('#spill').append('<button id="reset">Restart</button>');
+$('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
   spill.removeChild(spill.lastChild);
   }
@@ -57,7 +57,7 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
     ordArray.length = 0
   onPageLoad()
 
-})*/
+})
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -70,7 +70,9 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
 
 
   function tastatur(event) {
-    if(event.keyCode>64 && event.keyCode<121){
+
+    var knapp=event.keyCode;
+    if((knapp>64 && knapp<123) || knapp==230 || knapp == 198 || knapp == 248 || knapp==216 || knapp==229 || knapp==197){
           input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
           riktig=false
@@ -112,7 +114,7 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
 
   //onclick funksjon for alfabetet
     function sjekk() {
-
+      console.log(input)
 
       //disable knappen som blir trykket
       var gjettResultat = false;
@@ -139,7 +141,7 @@ function sjekkSvar() {
 
   if(svar==ord){
     skruAvInput();
-    
+
     c.clearRect(0,0,canvas.width,canvas.height);
   };
   }
