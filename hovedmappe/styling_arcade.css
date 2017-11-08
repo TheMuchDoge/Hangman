@@ -16,6 +16,17 @@ body {
   background-size: 100% 110%;
 }
 
+#overskrift {
+    text-transform: uppercase;
+    border: none;
+    font-size: 84px;
+    font-family: "Bitstream Vera Sans Mono";
+    text-align: center;
+    color: rgba(21,171,195,1.0);
+    text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+}
+
+
 
 .tile {
   height: 35px;
@@ -114,27 +125,17 @@ button:hover::after, button:hover::before {
    pointer-events: none;
  }
 
-#overskrift {
-    text-transform: uppercase;
-    border: none;
-    font-size: 84px;
-    font-family: "Bitstream Vera Sans Mono";
-    text-align: center;
-    color: rgba(21,171,195,1.0);
-    text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
-}
-
-
 
 #spillover {
-  color: rgba(21,171,195,1.0);
-  text-shadow: 0 0 5px rgba(21,171,195,0.7);
+ color: rgba(21,171,195,1.0);
+ text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+  text-transform: uppercase;
+  border: none;
   position: fixed;
   top: 40%;
   left: 35%;
   font-size: 60px;
-  -webkit-text-stroke-width: 1px;
- -webkit-text-stroke-color: black;
+  font-family: "Bitstream Vera Sans Mono";
 }
 
 #reset {
