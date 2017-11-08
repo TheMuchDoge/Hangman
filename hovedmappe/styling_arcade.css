@@ -129,12 +129,12 @@ button:hover::after, button:hover::before {
 #spillover {
   color: rgba(21,171,195,1.0);
   text-shadow: 0 0 5px rgba(21,171,195,0.7);
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60%;
+  position: fixed;
+  top: 40%;
+  left: 35%;
   font-size: 60px;
+  -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: black;
 }
 
 #reset {
@@ -165,3 +165,5 @@ button:hover::after, button:hover::before {
   top: 50%;
   left: 50%;
   font-size: 50px;
+  display: none;
+}
