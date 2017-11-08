@@ -11,7 +11,8 @@ var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
 var input;
-var input2;
+var c;
+var canvas;
 var liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
@@ -135,12 +136,14 @@ function sjekkSvar() {
   }
 
   if(svar==ord){
-    alert("DU VANT!")};
+    skruAvInput();
+    c.clearRect(0,0,canvas.width,canvas.height);
+  };
   }
 
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
-  canvas();
+  canvasTegn();
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
@@ -152,16 +155,20 @@ function feil() {
             $('#t'+x).append('<span id="feilbokover">'+ordArray[x].toUpperCase()+'</span>');}
             }
           }
-          while (knapper.hasChildNodes()) {
-          knapper.removeChild(knapper.lastChild);
-          }
-          $(document).off("keypress", tastatur);
+
 }
+}
+function skruAvInput() {
+  while (knapper.hasChildNodes()) {
+  knapper.removeChild(knapper.lastChild);
+  }
+  $(document).off("keypress", tastatur);
 }
 
-function canvas(){
-  var canvas = document.querySelector('canvas');
-  var c = canvas.getContext('2d');
+
+function canvasTegn(){
+  canvas = document.querySelector('canvas');
+  c = canvas.getContext('2d');
 
   if (liv==7) {
     //Hode
@@ -300,8 +307,8 @@ if (liv==1) {
 }
 
 function kran() {
-  var canvas = document.querySelector('canvas');
-  var c = canvas.getContext('2d');
+  canvas = document.querySelector('canvas');
+  c = canvas.getContext('2d');
 
   //Tegning av krana
   c.clearRect(0,0,canvas.width,canvas.height);
