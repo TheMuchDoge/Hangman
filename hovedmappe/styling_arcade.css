@@ -17,6 +17,9 @@ body {
 }
 
 #overskrift {
+    position: fixed;
+    top: 10%;
+    left: 20%;
     text-transform: uppercase;
     border: none;
     font-size: 84px;
@@ -140,7 +143,7 @@ button:hover::after, button:hover::before {
 
 #reset {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   right: 0;
   font-size: 30px;
   text-transform: uppercase;
@@ -148,7 +151,7 @@ button:hover::after, button:hover::before {
 
 #muteknapp {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   left: 0;
   font-size: 30px;
 }
