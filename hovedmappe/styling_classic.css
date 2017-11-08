@@ -16,6 +16,16 @@ body {
 
 }
 
+#overskrift {
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    text-transform: uppercase;
+    border: none;
+    font: normal 84px/1 Arial Black, Gadget, sans-serif;
+    color: #800200;
+}
+
 
 .tile {
   height: 35px;
@@ -87,16 +97,6 @@ button:disabled {
   pointer-events: none;
 }
 
-#overskrift {
-    text-transform: uppercase;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 84px/1 Arial Black, Gadget, sans-serif;
-    color: black;
-    text-align: center;
-}
 
 #spillover {
   position: fixed;
@@ -107,9 +107,18 @@ button:disabled {
  -webkit-text-stroke-color: black;
 }
 
+#spillvant {
+  position: fixed;
+  top: 40%;
+  left: 35%;
+  font-size: 60px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
 #reset {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   right: 0;
   font-size: 30px;
   text-transform: uppercase;
@@ -117,7 +126,7 @@ button:disabled {
 
 #muteknapp {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   left: 0;
   font-size: 30px;
 }

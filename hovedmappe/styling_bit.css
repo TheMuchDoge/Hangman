@@ -17,6 +17,20 @@ body {
 }
 
 
+#overskrift {
+  position: fixed;
+  top: 10%;
+  left: 32.5%;
+  border: none;
+  font: normal 84px/normal "Anton", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 5px 5px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) , 15px 14px 0 rgb(255,210,23) , 20px 20px 0 rgb(90,199,255) ;
+  text-transform: uppercase;
+}
+
 
 button, #livTekst {
   -webkit-box-sizing: content-box;
@@ -38,23 +52,6 @@ button:disabled {
 }
 
 
-
-#overskrift {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border: none;
-  font: normal 84px/normal "Anton", Helvetica, sans-serif;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  text-shadow: 5px 5px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) , 15px 14px 0 rgb(255,210,23) , 20px 20px 0 rgb(90,199,255) ;
-  text-transform: uppercase;
-}
-
-
-
 .tile {
    height: 35px;
    width: 35px;
@@ -63,7 +60,6 @@ button:disabled {
    font-size: 30px;
    display: inline-block;
    border-bottom: 1.5px solid black;
-   /*border: 1px solid black;*/
    }
 
 #spill {
@@ -71,7 +67,6 @@ button:disabled {
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  /*padding: 10px 15px 10px 15px;*/
   text-decoration: none;
 }
 
@@ -107,13 +102,6 @@ canvas {
   left: 12.5%;
 }
 
-#MegaMan {
-  position: fixed;
-  top: 65%;
-  left: 80%;
-  zoom: 25%;
-}
-
 
 #spillover{
   position: fixed;
@@ -128,7 +116,7 @@ canvas {
 
 #reset {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   right: 0;
   font-size: 30px;
   text-transform: uppercase;
@@ -136,7 +124,7 @@ canvas {
 
 #muteknapp {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   left: 0;
   font-size: 30px;
 }
@@ -147,4 +135,11 @@ canvas {
   left: 50%;
   font-size: 50px;
   display: none;
+}
+
+#MegaMan {
+  position: fixed;
+  top: 65%;
+  left: 80%;
+  zoom: 25%;
 }
