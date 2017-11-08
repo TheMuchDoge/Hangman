@@ -118,7 +118,7 @@ button:disabled {
 
 #reset {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   right: 0;
   font-size: 30px;
   text-transform: uppercase;
@@ -126,7 +126,7 @@ button:disabled {
 
 #muteknapp {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   left: 0;
   font-size: 30px;
 }
