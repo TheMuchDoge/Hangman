@@ -16,7 +16,7 @@ var canvas;
 let liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
-var livigjen = document.getElementById("livTekst")
+
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
 ,'s','t','u','v','w','x','y','z','æ','ø','å'];
@@ -112,7 +112,7 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
 
   //onclick funksjon for alfabetet
     function sjekk() {
-
+      console.log(input)
 
       //disable knappen som blir trykket
       var gjettResultat = false;
@@ -138,9 +138,9 @@ function sjekkSvar() {
   }
 
   if(svar==ord){
-        $('#spill').append('<div id="spillvant">DU VANT!</div>')};
+        $('#spill').append('<div id="spillvant">DU VANT!</div>');
         skruAvInput();
-        c.clearRect(0,0,canvas.width,canvas.height);
+        c.clearRect(0,0,canvas.width,canvas.height);}
   }
 
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
