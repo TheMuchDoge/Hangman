@@ -11,7 +11,8 @@ var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
 var input;
-var input2;
+var c;
+var canvas;
 var liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
@@ -41,21 +42,20 @@ function neste() {
   $(document).on("keyup", tastatur);
 
   kran();
-  $('#spill').append('<button id="reset" onClick="window.location.reload(true)">Restart</button>');
-  /* RESET KNAPP SOM IT FUNKE *ENNO*
-$('#spill').append('<button id="reset">Restart</button>');
-$('#reset').on("click",function (){
-  while (spill.hasChildNodes()) {
-  spill.removeChild(spill.lastChild);
+  $('#spill').append('<button id="reset">Restart</button>');
+  $('#reset').on("click",function (){
+    while (spill.hasChildNodes()) {
+    spill.removeChild(spill.lastChild);
   }
-  while (knapper.hasChildNodes()) {
-  knapper.removeChild(knapper.lastChild);
+    while (knapper.hasChildNodes()) {
+    knapper.removeChild(knapper.lastChild);
   }
-    ordArray.length = 0
-  onPageLoad()
+      ordArray.length = 0
+      for(i=0;i<alphabet.length;i++){
+            forsokt.push(alphabet[i].toUpperCase());}
+    onPageLoad()
 
-})
-*/
+  })
   //ska jo egentlig lag boksa, men vetdafaen
 
   var bokstaver=ord.length;
@@ -138,15 +138,17 @@ function sjekkSvar() {
 
   if(svar==ord){
         $('#spill').append('<div id="spillvant">DU VANT!</div>')};
+        skruAvInput();
+        c.clearRect(0,0,canvas.width,canvas.height);
   }
 
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
-  canvas();
+  canvasTegn();
   liv-=1
   livigjen.innerHTML = liv
   if (liv<1) {
-
+    skruAvInput();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $(document).off("keypress", tastatur);
     while (knapper.hasChildNodes()) {
@@ -161,12 +163,18 @@ function feil() {
 }
 }
 }
+function skruAvInput() {
+  while (knapper.hasChildNodes()) {
+  knapper.removeChild(knapper.lastChild);
+  }
+  $(document).off("keypress", tastatur);
+}
 
 var canvasStil = location.hash.match(/#(\w+)/)[1];
 
-function canvas(){
-  var canvas = document.querySelector('canvas');
-  var c = canvas.getContext('2d');
+function canvasTegn(){
+  canvas = document.querySelector('canvas');
+  c = canvas.getContext('2d');
 
   if (liv==7) {
     var img2=new Image();
@@ -227,8 +235,8 @@ function canvas(){
 }
 
 function kran() {
-  var canvas = document.querySelector('canvas');
-  var c = canvas.getContext('2d');
+  canvas = document.querySelector('canvas');
+  c = canvas.getContext('2d');
   var img1=new Image();
   img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
   img1.onload=function(){
