@@ -5,7 +5,7 @@ function onPageLoad(){
 
 
 
-$('#spill').append('<div id="livTekst"></div>');
+
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -16,7 +16,7 @@ var canvas;
 var liv;
 
 // var ordValgTekst = document.getElementById("ordValgTekst");
-var livigjen = document.getElementById("livTekst")
+
 
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
 ,'s','t','u','v','w','x','y','z','æ','ø','å'];
@@ -38,11 +38,13 @@ neste();
 function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
-  liv = 7;
-  livigjen.innerHTML = liv
+
+  liv=7;
+$('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
   $(document).on("keypress", tastatur);
   // feilBokstavTekst.innerHTML = input & input2
   kran();
+
   $('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
 //$('#spill').append('<button id="reset">Restart</button>');
 /*$('#reset').on("click",function (){
@@ -137,6 +139,7 @@ function sjekkSvar() {
 
   if(svar==ord){
     skruAvInput();
+    
     c.clearRect(0,0,canvas.width,canvas.height);
   };
   }
@@ -144,10 +147,11 @@ function sjekkSvar() {
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
   canvasTegn();
-  liv-=1
-  livigjen.innerHTML = liv
-  if (liv<1) {
 
+  liv-=1
+  livTekst.innerHTML = "Du har bare " + liv + " liv igjen!";
+  if (liv<1) {
+    skruAvInput();
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
@@ -164,6 +168,7 @@ function skruAvInput() {
   }
   $(document).off("keypress", tastatur);
 }
+
 
 
 function canvasTegn(){
