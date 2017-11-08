@@ -37,9 +37,9 @@ function neste() {
   $('#spill').append('<div id="bokstav"></div>');
   //  finnord ();
   liv = 7;
-
   livigjen.innerHTML = liv
-  // feilBokstavTekst.innerHTML = input & input2
+  $(document).on("keypress", tastatur);
+
   kran();
   $('#spill').append('<button id="reset" onClick="window.location.reload(true)">Restart</button>');
   /* RESET KNAPP SOM IT FUNKE *ENNO*
@@ -68,7 +68,7 @@ $('#reset').on("click",function (){
 
 
 
-  $(this).keypress(function(event){
+  function tastatur(event) {
     if(event.keyCode>64 && event.keyCode<121){
           input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
@@ -87,7 +87,7 @@ $('#reset').on("click",function (){
 
         }
       }
-    });
+    };
 
 
     $("#knapper").on('click', 'button', function() {
@@ -148,6 +148,9 @@ function feil() {
   if (liv<1) {
 
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
+    $(document).off("keypress", tastatur);
+    while (knapper.hasChildNodes()) {
+    knapper.removeChild(knapper.lastChild);}
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
