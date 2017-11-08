@@ -5,7 +5,7 @@ function onPageLoad(){
 
 
 
-$('#spill').append('<div id="livTekst"></div>');
+
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -168,7 +168,7 @@ function skruAvInput() {
   while (knapper.hasChildNodes()) {
   knapper.removeChild(knapper.lastChild);
   }
-  $(document).off("keypress", tastatur);
+  $(document).off("keyup", tastatur);
 }
 
 var canvasStil = location.hash.match(/#(\w+)/)[1];
