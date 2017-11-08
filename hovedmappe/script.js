@@ -38,7 +38,7 @@ function neste() {
   //  finnord ();
   liv = 7;
   livigjen.innerHTML = liv
-  $(document).on("keypress", tastatur);
+  $(document).on("keyup", tastatur);
 
   kran();
   $('#spill').append('<button id="reset" onClick="window.location.reload(true)">Restart</button>');
@@ -69,7 +69,7 @@ $('#reset').on("click",function (){
 
 
   function tastatur(event) {
-    if(event.keyCode>64 && event.keyCode<121){
+    if(event.keyCode>64 && event.keyCode<91){
           input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
           riktig=false
@@ -270,9 +270,3 @@ function muteLyd(){
     document.getElementById("muteknapp").innerHTML = "MUTE";
   }
 }
-
-
-
-
-
-
