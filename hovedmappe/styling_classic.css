@@ -19,11 +19,14 @@ body {
 #overskrift {
     position: fixed;
     top: 10%;
-    left: 15%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-transform: uppercase;
     border: none;
     font: normal 84px/1 Arial Black, Gadget, sans-serif;
     color: #800200;
+    text-align: center;
 }
 
 
@@ -61,11 +64,14 @@ canvas {
 #bokstav {
   position: fixed;
   text-align: center;
-  display: block;
+  display: table-cell;
   margin-left: auto;
   margin-right: auto;
   top: 75%;
-  left: 36.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
 }
 
 
@@ -75,8 +81,9 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   top: 85%;
-  left: 12.5%;
-
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 
@@ -101,16 +108,22 @@ button:disabled {
 #spillover {
   position: fixed;
   top: 40%;
-  left: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 60px;
   -webkit-text-stroke-width: 1px;
  -webkit-text-stroke-color: black;
+ text-align: center;
 }
 
 #spillvant {
   position: fixed;
   top: 40%;
-  left: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
   font-size: 60px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
