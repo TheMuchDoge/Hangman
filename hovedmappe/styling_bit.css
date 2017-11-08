@@ -136,7 +136,7 @@ canvas {
 
 #reset {
   position: fixed;
-  top: 8.5%;
+  top: 10%;
   right: 0;
   font-size: 30px;
   text-transform: uppercase;
@@ -144,7 +144,7 @@ canvas {
 
 #muteknapp {
   position: fixed;
-  top: 8.5%;
+  top: 10%;
   left: 0;
   font-size: 30px;
 }
