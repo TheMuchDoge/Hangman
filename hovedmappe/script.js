@@ -162,13 +162,18 @@ function feil() {
 }
 }
 
+
+var canvasStil = location.hash.match(/#(\w+)/)[1];
+
+
+
 function canvas(){
   var canvas = document.querySelector('canvas');
   var c = canvas.getContext('2d');
 
   if (liv==7) {
     var img2=new Image();
-    img2.src="ressurser/8bitcanvas/8bit_bilde2.gif";
+    img2.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde2.gif";
     img2.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img2,0,0);
@@ -176,7 +181,7 @@ function canvas(){
   }
   if (liv==6) {
     var img3=new Image();
-    img3.src="ressurser/8bitcanvas/8bit_bilde3.gif";
+    img3.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde3.gif";
     img3.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img3,0,0);
@@ -184,7 +189,7 @@ function canvas(){
   }
   if (liv==5) {
     var img4=new Image();
-    img4.src="ressurser/8bitcanvas/8bit_bilde4.gif";
+    img4.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde4.gif";
     img4.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img4,0,0);
@@ -192,7 +197,7 @@ function canvas(){
   }
   if (liv==4) {
     var img5=new Image();
-    img5.src="ressurser/8bitcanvas/8bit_bilde5.gif";
+    img5.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde5.gif";
     img5.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img5,0,0);
@@ -200,7 +205,7 @@ function canvas(){
   }
   if (liv==3) {
     var img6=new Image();
-    img6.src="ressurser/8bitcanvas/8bit_bilde6.gif";
+    img6.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde6.gif";
     img6.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img6,0,0);
@@ -208,7 +213,7 @@ function canvas(){
   }
   if (liv==2) {
     var img7=new Image();
-    img7.src="ressurser/8bitcanvas/8bit_bilde7.gif";
+    img7.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde7.gif";
     img7.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img7,0,0);
@@ -216,7 +221,7 @@ function canvas(){
   }
   if (liv==1) {
     var img8=new Image();
-    img8.src="ressurser/8bitcanvas/8bit_bilde8.gif";
+    img8.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde8.gif";
     img8.onload=function() {
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img8,0,0);
@@ -228,7 +233,7 @@ function kran() {
   var canvas = document.querySelector('canvas');
   var c = canvas.getContext('2d');
   var img1=new Image();
-  img1.src="ressurser/8bitcanvas/8bit_bilde1.gif";
+  img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
   img1.onload=function(){
     c.clearRect(0,0,canvas.width,canvas.height);
     c.drawImage(img1,0,0);
@@ -236,8 +241,10 @@ function kran() {
 }
 
   //Tegning av krana
+  var canvas = document.querySelector('canvas');
+  var c = canvas.getContext('2d');
   var img1=new Image();
-  img1.src="ressurser/8bitcanvas/8bit_bilde1.gif";
+  img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
   img1.onload=function(){
     c.clearRect(0,0,canvas.width,canvas.height);
     c.drawImage(img1,0,0);
@@ -247,8 +254,9 @@ function kran() {
 
   //***************** HER JOBBER ELIAS
 
-var hash = location.hash;
-var startStil = location.hash.match(/#(\w+)/)[1];
+  var hash = location.hash;
+  var startStil = location.hash.match(/#(\w+)/)[1];
+
 
 function byttStil(stil){
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
