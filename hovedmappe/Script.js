@@ -148,6 +148,8 @@ function feil() {
   if (liv<1) {
 
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
+    while (knapper.hasChildNodes()) {
+    knapper.removeChild(knapper.lastChild);}
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){

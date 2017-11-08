@@ -149,11 +149,12 @@ function feil() {
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
-            $('#t'+x).append('<span id="feilbokover">'+ordArray[x].toUpperCase()+'</span>');
-        }
-
-  }
-}
+            $('#t'+x).append('<span id="feilbokover">'+ordArray[x].toUpperCase()+'</span>');}
+            }
+          }
+          while (knapper.hasChildNodes()) {
+          knapper.removeChild(knapper.lastChild);
+          }
 }
 }
 

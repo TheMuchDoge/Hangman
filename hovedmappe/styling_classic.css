@@ -42,9 +42,10 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  top: 300px;
-  height: 50%;
-  width: 40%;
+  bottom: 0;
+  right: 50%;
+  height: 60%;
+  width: 50%;
 }
 
 #bokstav {
@@ -72,11 +73,11 @@ canvas {
 button {
   border: none;
   font-family: Arial;
-  font-size: 45px;
+  font-size: 40px;
   text-decoration: none;
   background: none;
   color: #800200;
-  transition: all 280ms ease-in-out 0s;
+  zoom: 90%;
 }
 
 
@@ -111,5 +112,11 @@ button:disabled {
   margin-left: auto;
   margin-right: auto;
   max-width: 60%;
-  font-size: 100px;
+  font-size: 60px;
+}
+
+#livTekst{
+  position:absolute;
+  left:230px;
+  top:300px;
 }
