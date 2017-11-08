@@ -1,6 +1,7 @@
 $(function(){
     onPageLoad();
 });
+var input;
 function onPageLoad(){
 
 
@@ -10,7 +11,7 @@ var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
 //var ord;
-var input;
+
 var c;
 var canvas;
 let liv;
@@ -50,11 +51,13 @@ $('#spill').append('<button id="reset">Restart</button>');
 $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
   spill.removeChild(spill.lastChild);
-  }
+}
   while (knapper.hasChildNodes()) {
   knapper.removeChild(knapper.lastChild);
-  }
+}
     ordArray.length = 0
+    for(i=0;i<alphabet.length;i++){
+          forsokt.push(alphabet[i].toUpperCase());}
   onPageLoad()
 
 })
