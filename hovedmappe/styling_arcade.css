@@ -16,6 +16,20 @@ body {
   background-size: 100% 110%;
 }
 
+#overskrift {
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    text-transform: uppercase;
+    border: none;
+    font-size: 84px;
+    font-family: "Bitstream Vera Sans Mono";
+    text-align: center;
+    color: rgba(21,171,195,1.0);
+    text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+}
+
+
 
 .tile {
   height: 35px;
@@ -114,32 +128,22 @@ button:hover::after, button:hover::before {
    pointer-events: none;
  }
 
-#overskrift {
-    text-transform: uppercase;
-    border: none;
-    font-size: 84px;
-    font-family: "Bitstream Vera Sans Mono";
-    text-align: center;
-    color: rgba(21,171,195,1.0);
-    text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
-}
-
-
 
 #spillover {
-  color: rgba(21,171,195,1.0);
-  text-shadow: 0 0 5px rgba(21,171,195,0.7);
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60%;
+ color: rgba(21,171,195,1.0);
+ text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+  text-transform: uppercase;
+  border: none;
+  position: fixed;
+  top: 40%;
+  left: 35%;
   font-size: 60px;
+  font-family: "Bitstream Vera Sans Mono";
 }
 
 #reset {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   right: 0;
   font-size: 30px;
   text-transform: uppercase;
@@ -147,11 +151,19 @@ button:hover::after, button:hover::before {
 
 #muteknapp {
   position: fixed;
-  top: 7.5%;
+  top: 8.5%;
   left: 0;
   font-size: 30px;
 }
 
+
+#livTekst {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  display: none;
+}
 
 #Trongif {
   position: fixed;
@@ -159,9 +171,3 @@ button:hover::after, button:hover::before {
   left: 80%;
   zoom: 25%;
 }
-
-#livTekst {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
