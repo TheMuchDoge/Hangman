@@ -255,13 +255,16 @@ function byttStil(stil){
   document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
+  location.hash = stil;
 }
 
 function muteLyd(){
   var lyd = document.getElementById("lydSpor");
   if(lydSpor.muted == false){
     lydSpor.muted = true;
+    document.getElementById("muteknapp").innerHTML = "UNMUTE";
   }else{
     lydSpor.muted = false;
+    document.getElementById("muteknapp").innerHTML = "MUTE";
   }
 }
