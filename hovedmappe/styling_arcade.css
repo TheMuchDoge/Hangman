@@ -19,7 +19,9 @@ body {
 #overskrift {
     position: fixed;
     top: 10%;
-    left: 20%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-transform: uppercase;
     border: none;
     font-size: 84px;
@@ -71,8 +73,9 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   top: 75%;
-  left: 36.5%;
-  border-spacing: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 
@@ -82,7 +85,9 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   top: 85%;
-  left: 12.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 
@@ -133,12 +138,27 @@ button:hover::after, button:hover::before {
  color: rgba(21,171,195,1.0);
  text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
   text-transform: uppercase;
+  text-align: center;
   border: none;
   position: fixed;
   top: 40%;
-  left: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 60px;
   font-family: "Bitstream Vera Sans Mono";
+}
+
+#spillvant {
+  position: fixed;
+  top: 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 60px;
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 #reset {

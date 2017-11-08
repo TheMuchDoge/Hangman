@@ -45,7 +45,7 @@ body {
 
 img {
   width:300px;
-  height:200px;
+  height:300px;
   border-radius: 20px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -57,21 +57,51 @@ img {
   border-style: solid;
 }
 
-#classic, #bit, #arcade {
-  margin-left: 9%;
-}
-
-#openClassic, #classic {
+#openClassic {
   position: fixed;
+  top: 50%;
   left: 10%;
 }
 
-#openBit, #bit {
+#classic {
   position: fixed;
+  top: 42%;
+  left: 13.5%;
+  font: normal 45px/1 Arial Black, Gadget, sans-serif;
+  color: #800200;
+  text-align: center;
+}
+
+#openBit {
+  position: fixed;
+  top: 50%;
   left: 40%;
 }
 
-#openArcade, #arcade {
+#bit {
   position: fixed;
+  top: 42%;
+  left: 47%;
+  font: normal 45px/normal "Anton", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-shadow: 2.5px 2.5px 0 rgb(255,210,23) , 5px 5px 0 rgb(90,199,255) , 8px 8px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) ;
+  background: rgba(200,54,54,0);
+  text-align: center;
+}
+
+#openArcade {
+  position: fixed;
+  top: 50%;
   left: 70%;
+}
+
+#arcade {
+  position: fixed;
+  top: 42%;
+  left: 76%;
+  font-size: 45px;
+  font-family: "Bitstream Vera Sans Mono";
+  color: rgba(21,171,195,1.0);
+  text-shadow: 0 0 5px rgba(21,171,195,0.7);
+  text-align: center;
 }

@@ -20,7 +20,9 @@ body {
 #overskrift {
   position: fixed;
   top: 10%;
-  left: 32.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border: none;
   font: normal 84px/normal "Anton", Helvetica, sans-serif;
   color: rgb(255, 255, 255);
@@ -89,7 +91,9 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   top: 75%;
-  left: 36.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 
@@ -99,19 +103,35 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   top: 85%;
-  left: 12.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 
 #spillover{
   position: fixed;
   top: 40%;
-  left: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 60px;
+  text-align: center;
   /*-webkit-text-stroke-width: 1px;
  -webkit-text-stroke-color: black;*/
  text-shadow: 2.5px 2.5px 0 rgb(255,210,23) , 5px 5px 0 rgb(90,199,255) , 8px 8px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) ;
+}
 
+#spillvant {
+  position: fixed;
+  top: 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 60px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 #reset {
