@@ -16,6 +16,17 @@ body {
 
 }
 
+#overskrift {
+    text-transform: uppercase;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal 84px/1 Arial Black, Gadget, sans-serif;
+    color: black;
+    text-align: center;
+}
+
 
 .tile {
   height: 35px;
@@ -87,16 +98,6 @@ button:disabled {
   pointer-events: none;
 }
 
-#overskrift {
-    text-transform: uppercase;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 84px/1 Arial Black, Gadget, sans-serif;
-    color: black;
-    text-align: center;
-}
 
 #spillover {
   position: fixed;

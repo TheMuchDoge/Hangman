@@ -153,17 +153,17 @@ button:hover::after, button:hover::before {
 }
 
 
-#Trongif {
-  position: fixed;
-  top: 65%;
-  left: 80%;
-  zoom: 25%;
-}
-
 #livTekst {
   position: fixed;
   top: 50%;
   left: 50%;
   font-size: 50px;
   display: none;
+}
+
+#Trongif {
+  position: fixed;
+  top: 65%;
+  left: 80%;
+  zoom: 25%;
 }
