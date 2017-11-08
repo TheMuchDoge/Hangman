@@ -17,6 +17,9 @@ body {
 }
 
 #overskrift {
+    position: fixed;
+    top: 10%;
+    left: 20%;
     text-transform: uppercase;
     border: none;
     font-size: 84px;

@@ -137,7 +137,7 @@ function sjekkSvar() {
   }
 
   if(svar==ord){
-    alert("DU VANT!")};
+        $('#spill').append('<div id="spillvant">DU VANT!</div>')};
   }
 
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
