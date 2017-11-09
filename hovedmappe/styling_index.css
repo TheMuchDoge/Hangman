@@ -18,7 +18,9 @@ body {
   background-repeat: no-repeat;
   position: relative;
   background-size: 100% 110%;
+  background-attachment: fixed;
 }
+
 
 /* Header-"banner" hentet fra: https://pixabay.com/no/banner-tatovering-vintage-b%C3%A5nd-2136190/ */
 
