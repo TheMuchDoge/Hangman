@@ -6,6 +6,7 @@ html {
   top: 0;
   bottom: 0;
   position: absolute;
+
 }
 
 /* Bakgrunn hentet fra: https://www.freecreatives.com/backgrounds/vintage-background-images.html */
@@ -27,7 +28,7 @@ body {
   height: 250px;
   width: 100%;
   background-position: center;
-  background-image: url("ressurser/Headerbakgrunn.png");
+  background-image: url("Ressurser/Headerbakgrunn.png");
   background-repeat: no-repeat;
   font-family: arial;
 }

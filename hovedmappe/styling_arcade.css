@@ -135,18 +135,20 @@ button:hover::after, button:hover::before {
 
 
 #spillover {
- color: rgba(21,171,195,1.0);
- text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
-  text-transform: uppercase;
-  text-align: center;
-  border: none;
   position: fixed;
   top: 40%;
   bottom: 0;
   left: 0;
   right: 0;
+ color: rgba(21,171,195,1.0);
+ text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
   font-size: 60px;
   font-family: "Bitstream Vera Sans Mono";
+  /*-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;*/
 }
 
 #spillvant {
@@ -155,10 +157,13 @@ button:hover::after, button:hover::before {
   bottom: 0;
   left: 0;
   right: 0;
+  color: rgba(21,171,195,1.0);
+  text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
   font-size: 60px;
+  font-family: "Bitstream Vera Sans Mono";
   text-align: center;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  /*-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;*/
 }
 
 #reset {
