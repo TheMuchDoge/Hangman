@@ -28,7 +28,7 @@ body {
   height: 250px;
   width: 100%;
   background-position: center;
-  background-image: url("Ressurser/Headerbakgrunn.png");
+  background-image: url("ressurser/Headerbakgrunn.png");
   background-repeat: no-repeat;
   font-family: arial;
 }
