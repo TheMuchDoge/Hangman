@@ -42,8 +42,8 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
 
   $(document).on("keyup", tastatur);
 
-  kran();
-  $('#spill').append('<button id="reset">Restart</button>');
+
+  $('#spill').append('<button id="reset" class="res" >Restart</button>');
   $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
     spill.removeChild(spill.lastChild);
@@ -64,7 +64,7 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
   for(j=0;j<bokstaver;j++){
       $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
-
+kran();
   }
 
 
@@ -239,12 +239,12 @@ function canvasTegn(){
 function kran() {
   canvas = document.querySelector('canvas');
   c = canvas.getContext('2d');
-  var img1=new Image();
-  img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
+//  var img1=new Image();
+  /*img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
   img1.onload=function(){
     c.clearRect(0,0,canvas.width,canvas.height);
     c.drawImage(img1,0,0);
-  }
+  }*/
 }
 
   //Tegning av krana

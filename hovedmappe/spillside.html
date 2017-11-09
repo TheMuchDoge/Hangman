@@ -18,23 +18,27 @@
 
 
       <nav class="navbar navbar-inverse">
-        <a href="index.html"><p class="navbar-text">Home</p></a>
+        <div class="container-fluid">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"> Hangman </a>
+          <div class="collapse navbar-collapse" id="myNavbar">
+                    <a href="index.html"><p class="navbar-text">Home</p></a>
           <ul class="nav navbar-nav">
-            <li><a onclick="byttStil('classic')">Classic</a></li>
-            <li><a onclick="byttStil('bit')">8-bit</a></li>
-            <li><a onclick="byttStil('arcade')">Arcade</a></li>
+            <li><a class="res" onclick="byttStil('classic')">Classic</a></li>
+            <li><a class="res" onclick="byttStil('bit')">8-bit</a></li>
+            <li><a class="res" onclick="byttStil('arcade')">Arcade</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
             <li>
               <a onclick="">About & Rules</a>
             </li>
-            <li> <a>
-                <!-- <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffolk.ntnu.no%2Fandrhhe%2FProsjekt%2FProsjekt2%2Fforside.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> -->
-              </a> </li>
-            <li>
-              <a></a>
-            </li>
+          </ul>
+        </div>
+        </div>
       </nav>
       <div id="player">
        <audio id="lydSpor" autoplay loop>
