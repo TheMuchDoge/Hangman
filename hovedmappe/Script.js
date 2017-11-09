@@ -43,8 +43,8 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
   $(document).on("keyup", tastatur);
 
   kran();
-  $('#spill').append('<button id="reset">Restart</button>');
-  $('#reset').on("click",function (){
+  $('#spill').append('<button id="reset" class="res" >Restart</button>');
+  $('.res').on("click",function (){
   while (spill.hasChildNodes()) {
     spill.removeChild(spill.lastChild);
   }
