@@ -57,6 +57,13 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
     onPageLoad()
 
   })
+  $('.resn').on("click",function(){
+    console.log(canvasStil)
+    canvasTegn();
+
+
+
+  })
   //ska jo egentlig lag boksa, men vetdafaen
 
   var bokstaver=ord.length;
@@ -64,7 +71,7 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
   for(j=0;j<bokstaver;j++){
       $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
-kran();
+canvasTegn();
   }
 
 
@@ -145,8 +152,8 @@ function sjekkSvar() {
 
 //funksjon som skal redusere liv når en bokstav som ikke er i ordet blir trykket
 function feil() {
-  canvasTegn();
   liv-=1
+  canvasTegn();
   livTekst.innerHTML = "Du har bare " + liv + " liv igjen!";
   if (liv<1) {
     skruAvInput();
@@ -175,10 +182,19 @@ function skruAvInput() {
 var canvasStil = location.hash.match(/#(\w+)/)[1];
 
 function canvasTegn(){
+  canvasStil = location.hash.match(/#(\w+)/)[1];
   canvas = document.querySelector('canvas');
   c = canvas.getContext('2d');
 
   if (liv==7) {
+    var img1=new Image();
+    img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
+    img1.onload=function(){
+      c.clearRect(0,0,canvas.width,canvas.height);
+      c.drawImage(img1,0,0);
+  }
+}
+  if (liv==6) {
     var img2=new Image();
     img2.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde2.gif";
     img2.onload=function() {
@@ -186,7 +202,7 @@ function canvasTegn(){
       c.drawImage(img2,0,0);
     }
   }
-  if (liv==6) {
+  if (liv==5) {
     var img3=new Image();
     img3.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde3.gif";
     img3.onload=function() {
@@ -194,7 +210,7 @@ function canvasTegn(){
       c.drawImage(img3,0,0);
     }
   }
-  if (liv==5) {
+  if (liv==4) {
     var img4=new Image();
     img4.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde4.gif";
     img4.onload=function() {
@@ -202,7 +218,7 @@ function canvasTegn(){
       c.drawImage(img4,0,0);
     }
   }
-  if (liv==4) {
+  if (liv==3) {
     var img5=new Image();
     img5.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde5.gif";
     img5.onload=function() {
@@ -210,7 +226,7 @@ function canvasTegn(){
       c.drawImage(img5,0,0);
     }
   }
-  if (liv==3) {
+  if (liv==2) {
     var img6=new Image();
     img6.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde6.gif";
     img6.onload=function() {
@@ -218,7 +234,7 @@ function canvasTegn(){
       c.drawImage(img6,0,0);
     }
   }
-  if (liv==2) {
+  if (liv==1) {
     var img7=new Image();
     img7.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde7.gif";
     img7.onload=function() {
@@ -226,7 +242,7 @@ function canvasTegn(){
       c.drawImage(img7,0,0);
     }
   }
-  if (liv==1) {
+  if (liv==0) {
     var img8=new Image();
     img8.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde8.gif";
     img8.onload=function() {
@@ -235,7 +251,7 @@ function canvasTegn(){
     }
   }
 }
-
+/*
 function kran() {
   canvas = document.querySelector('canvas');
   c = canvas.getContext('2d');
@@ -244,7 +260,7 @@ function kran() {
   img1.onload=function(){
     c.clearRect(0,0,canvas.width,canvas.height);
     c.drawImage(img1,0,0);
-  }*/
+  }
 }
 
   //Tegning av krana
@@ -252,9 +268,9 @@ function kran() {
   img1.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde1.gif";
   img1.onload=function(){
     c.clearRect(0,0,canvas.width,canvas.height);
-    c.drawImage(img1,0,0);
+    c.drawImage(img1,0,0);*/
 
-}
+//}
 }
 
   //***************** HER JOBBER ELIAS
