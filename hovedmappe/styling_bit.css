@@ -39,7 +39,7 @@ button, #livTekst {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   border: none;
-  font: normal 45px/normal "Anton", Helvetica, sans-serif;
+  font: normal 250%/normal "Anton", Helvetica, sans-serif;
   color: rgb(255, 255, 255);
   text-align: center;
   -o-text-overflow: clip;
