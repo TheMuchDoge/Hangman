@@ -45,13 +45,13 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
   kran();
   $('#spill').append('<button id="reset">Restart</button>');
   $('#reset').on("click",function (){
-  /*  while (spill.hasChildNodes()) {
+  while (spill.hasChildNodes()) {
     spill.removeChild(spill.lastChild);
   }
     while (knapper.hasChildNodes()) {
     knapper.removeChild(knapper.lastChild);
   }
-      ordArray.length = 0*/
+      ordArray.length = 0
       for(i=0;i<alphabet.length;i++){
             forsokt.push(alphabet[i].toUpperCase());}
     onPageLoad()
