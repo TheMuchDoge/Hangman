@@ -150,6 +150,7 @@ function feil() {
   livTekst.innerHTML = "Du har bare " + liv + " liv igjen!";
   if (liv<1) {
     skruAvInput();
+    livTekst.innerHTML = "Du har " + liv + " liv igjen!";
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
     $(document).off("keypress", tastatur);
     while (knapper.hasChildNodes()) {
