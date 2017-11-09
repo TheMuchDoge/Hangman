@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script src="script.js"></script>
   </head>
-
-    <div>
 
     <body>
       <div id="header">
       <h1>Hangman</h1>
-
-    </div>
+     </div>
 
     <span id="classic">Classic</span><span id="bit">8-Bit</span><span id="arcade">Arcade</span><br>
     <a href="spillside.html#classic">
@@ -25,16 +23,6 @@
     <img src="ressurser/8_bit_bilde.png" id="openBit"></a>
     <a href="spillside.html#arcade">
     <img src="ressurser/arcade_bilde.png" id="openArcade"></a>
-
-
-    <script>
-        function byttStil(stil){
-          document.getElementById("cssLink").href = "styling_" + stil + ".css";
-          document.getElementById("overskrift").innerHTML = stil + " hangman";
-          document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-        }
-    </script>
-
 
   </body>
 </html>

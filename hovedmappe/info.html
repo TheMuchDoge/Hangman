@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html>
+
+
   <head>
     <meta charset="UTF-8">
-    <title>Informasjon</title>
-    <style>
-      .sentrert{
-        text-align:center;
-      }
-      .persBilder{
-        width:180px;
-        height:250px;
-      }
-      figure{
-        display:inline-block;
-        margin:10px;
-      }
-      #kart{
-        margin-top:50px;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styling_info.css">
+    <link id="cssLink" rel="stylesheet" type="text/css">
+    <link rel="icon" href="ressurser/favicon.ico" type="image/x-icon"/>
+    <script src="script.js"></script>
+    <title id="tittel"></title>
   </head>
-  <body>
-    <div class="sentrert">
+
+
+  <body onload="byttStil(startStil)">
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <a class="navbar-brand"> Hangman </a>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <a href="index.html"><p class="navbar-text">Home</p></a>
+            <ul class="nav navbar-nav">
+              <li><a href="spillside.html#classic" class="res" onclick="byttStil('classic')">Classic</a></li>
+              <li><a href="spillside.html#bit" class="res" onclick="byttStil('bit')">8-bit</a></li>
+              <li><a href="spillside.html#arcade" class="res" onclick="byttStil('arcade')">Arcade</a></li>
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="info.html" onclick="">About & Rules</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
+
+    <div id="header">
+      <h1>Info</h1>
+    </div>
+
+    <div id="regler">
     <h1>Spillets Regler</h1>
       <li>Du har 7 liv.</li>
       <li>Du mister et liv når du gjetter feil bokstav</li>
@@ -30,9 +56,10 @@
       <li>Du taper når du er tom for liv.</li>
       <h2>-HVEM ER VI-</h2>
       <h3>Om oss</h3>
-      <div id="omOss"> 
+    </div>
+      <div id="omOss">
         Spillet er utviklet som et prosjekt i teamarbeid og webutvikling av Team 5.
-        Teamet består av Odin (23), <br>Marius (20), Elias (21), 
+        Teamet består av Odin (23), <br>Marius (20), Elias (21),
         Aleksander (27) og André (19) som alle studerer IT-støttet bedriftsutvikling
         ved NTNU.<br>Spillet er utviklet over en periode på 4 uker. Vi er lokalisert på campus Kalvskinnet midt i Trondheim.
       </div>
@@ -56,33 +83,18 @@
         <img class="persBilder" src="ressurser/bilde_andre.png">
         <figcaption>André Henriksen</figcaption>
       </figure>
-      <div class="sentrert" id="kart">
+      <div id="kart">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.7144147206884!2d10.385554215963523!3d63.42831098287382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d31855768a975%3A0x6eeba6865bc69cab!2sGunnerus+gate+1%2C+7012+Trondheim!5e0!3m2!1sno!2sno!4v1510229723906"
       width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
+
+
+      <script>
+          function byttStil(stil){
+            document.getElementById("cssLink").href = "styling_" + stil + ".css";
+            document.getElementById("overskrift").innerHTML = stil + " hangman";
+            document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
+          }
+      </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
