@@ -17,6 +17,10 @@ body {
   background-attachment: fixed;
 }
 
+li:hover {
+    cursor: pointer;
+}
+
 
 #overskrift {
   position: fixed;
