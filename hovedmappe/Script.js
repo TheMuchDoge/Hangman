@@ -66,10 +66,10 @@ canvasTegn();
   }
     while (knapper.hasChildNodes()) {
     knapper.removeChild(knapper.lastChild);
-  }
-      ordArray.length = 0
+  }forsokt=0
+    /*  ordArray.length = 0
       for(i=0;i<alphabet.length;i++){
-            forsokt.push(alphabet[i].toUpperCase());}
+            forsokt.push(alphabet[i].toUpperCase());}*/
     neste()
 
   })
