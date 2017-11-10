@@ -44,9 +44,9 @@ function neste() {
 
   var ordet=Math.floor(Math.random()*ordBank.length);
   if (document.location.host) {
-  ord=ordBank[ordet][0];}
+  ord=ordBank[ordet][0].toUpperCase();}
   else {
-    ord=ordBank[ordet]
+    ord=ordBank[ordet].toUpperCase()
   }
   ordArray=ord.split("");
 
