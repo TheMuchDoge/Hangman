@@ -272,7 +272,7 @@ function byttStil(stil){
     document.getElementById("overskrift").innerHTML = stil + " hangman";
     document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
   }
-  document.getElementById("cssLink").href = "stiler_ressurser/styling_" + stil + ".css";
+  document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   location.hash = stil;
 }
