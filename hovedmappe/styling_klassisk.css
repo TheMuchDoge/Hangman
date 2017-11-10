@@ -106,7 +106,7 @@ button:disabled {
   pointer-events: none;
 }
 
-#spillover, #spillvant, #duvant {
+#spillover, #spillvant {
   position: fixed;
   top: 40%;
   bottom: 0;
