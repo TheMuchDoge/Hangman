@@ -17,6 +17,10 @@ body {
   background-attachment: fixed;
 }
 
+#navbar {
+  z-index: 1;
+}
+
 li:hover {
     cursor: pointer;
 }
