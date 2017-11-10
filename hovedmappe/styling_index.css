@@ -10,7 +10,6 @@ html {
 
 /* Bakgrunn hentet fra: https://www.freecreatives.com/backgrounds/vintage-background-images.html */
 
-
 body {
   background: url("ressurser/forsidebakgrunn.jpg");
   width: auto;
@@ -21,6 +20,7 @@ body {
 }
 
 /* Header-"banner" hentet fra: https://pixabay.com/no/banner-tatovering-vintage-b%C3%A5nd-2136190/ */
+
 #header {
   top: 35%;
   height: 250px;
@@ -41,7 +41,6 @@ body {
   font-family: arial;
   color: black;
 }
-
 
 img {
   width:300px;
