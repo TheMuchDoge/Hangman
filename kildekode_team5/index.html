@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HANGMAN</title>
+    <!-- Henter ut ikonet til siden -->
+    <link rel="icon" href="ressurser/favicon.ico" type="image/x-icon"/>
+    <!-- Linker til rammeverk, etc (f.eks bootstrap, jquery) -->
+    <link rel="stylesheet" type="text/css" href="styling_index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigasjonsbaren -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand"> Hangman </a>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <!-- Bruker location.hash for å velge temaet -->
+            <li><a href="spillside.html#klassisk" class="res">klassisk</a></li>
+            <li><a href="spillside.html#bit" class="res">8-bit</a></li>
+            <li><a href="spillside.html#arkade" class="res">Arkade</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="info.html" onclick="">Regler & info</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!-- Legger til overskrift -->
+      <div id="header">
+        <h1>Hangman</h1>
+      </div>
+    <!-- Legger til overskrifter og bilder for de forskjellige temaene -->
+    <span id="classic">Klassisk</span><span id="bit">8-Bit</span><span id="arcade">Arkade</span><br>
+    <a href="spillside.html#klassisk">
+    <img src="ressurser/classic_bilde.png" id="openClassic"></a>
+    <a href="spillside.html#bit">
+    <img src="ressurser/8_bit_bilde.png" id="openBit"></a>
+    <a href="spillside.html#arkade">
+    <img src="ressurser/arcade_bilde.png" id="openArcade"></a>
+  </body>
+</html>
