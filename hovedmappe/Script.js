@@ -59,14 +59,14 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
     }
 canvasTegn();
   }
-  $('body').append('<button id="reset" class="res" >Restart</button>');
+  $('#restart').append('<button id="reset" class="res" >Restart</button>');
   $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
     spill.removeChild(spill.lastChild);
   }
     while (knapper.hasChildNodes()) {
     knapper.removeChild(knapper.lastChild);
-  }forsokt=0
+  } forsokt.length = 0;
     /*  ordArray.length = 0
       for(i=0;i<alphabet.length;i++){
             forsokt.push(alphabet[i].toUpperCase());}*/
