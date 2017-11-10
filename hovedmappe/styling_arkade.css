@@ -1,7 +1,7 @@
 html {
   height: 100%;
   width: 100%;
-  left:0;
+  left: 0;
   right: 0;
   top: 0;
   bottom: 0;
@@ -35,8 +35,6 @@ li:hover {
     color: rgba(21,171,195,1.0);
     text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
 }
-
-
 
 .tile {
   height: 35px;
@@ -139,24 +137,7 @@ button:hover::after, button:hover::before {
  }
 
 
-#spillover {
-  position: fixed;
-  top: 40%;
-  bottom: 0;
-  left: 0;
-  right: 0;
- color: rgba(21,171,195,1.0);
- text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
-  text-transform: uppercase;
-  text-align: center;
-  border: none;
-  font-size: 60px;
-  font-family: "Bitstream Vera Sans Mono";
-  /*-webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;*/
-}
-
-#spillvant {
+#spillover, #spillvant {
   position: fixed;
   top: 40%;
   bottom: 0;
@@ -164,11 +145,11 @@ button:hover::after, button:hover::before {
   right: 0;
   color: rgba(21,171,195,1.0);
   text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
   font-size: 60px;
   font-family: "Bitstream Vera Sans Mono";
-  text-align: center;
-  /*-webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;*/
 }
 
 #reset {
@@ -188,16 +169,5 @@ button:hover::after, button:hover::before {
 
 
 #livTekst {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
   display: none;
-}
-
-#Trongif {
-  position: fixed;
-  top: 65%;
-  left: 80%;
-  zoom: 25%;
 }
