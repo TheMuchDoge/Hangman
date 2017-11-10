@@ -1,6 +1,8 @@
 $(document).ready(function ()  {
 
-//variabler som brukes gjennom hele koden
+//Deklarerer variabler som brukes gjennom hele koden
+// ordBank: Array med alle ordene, ordArray: Det valgte ordet delt opp i bokstaver 
+// forsokt: Bokstaver som er prøvd
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -9,10 +11,10 @@ var c;
 var canvas;
 let liv;
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
-,'s','t','u','v','w','x','y','z','æ','ø','å'];
+,'s','t','u','v','w','x','y','z'];
 var ord;
 
-//funksjonen som henter ordBank fra json hvis du er online, eller fra script hvis du ikke er det
+//Funksjonen som henter ordBank fra json hvis du har internett, eller fra script dersom du ikke er det
 if (document.location.host) {
   $.getJSON("ordBank.json", function(data) {
   for(i=0; i<data.ordliste.length; i++) {
@@ -22,34 +24,32 @@ if (document.location.host) {
   neste()})
 } else {
   console.log("Du kjører filen lokalt, begrenset mengde ord")
-  ordBank = ["damer", "spill", "datamaskin", "hore"];
+  ordBank = ["damer", "spill", "datamaskin", "brusmaskin", "mobiltelefon", "eple", "kalvskinnet", "databaser", "lagarbeid", "venner"];
   neste();
 }
 
-
 function neste() {
-  //antall liv du starter med
+  //Antall liv du starter med
   liv=7;
-  //funksjonen som velger ordet fra array
-  var ordet=Math.floor(Math.random()*ordBank.length);
-  //funksjon som velger ordet avhenging av om det er offline eller online. dette var nødvendig da uthenting av data fra json genererte flere arrays
+  //"var valg" velger et tilfedlig tall basert på antall elementer i ordbanken
+  var valg=Math.floor(Math.random()*ordBank.length);
+  //Velger ordet avhenging av om brukeren kjører siden lokalt eller ikke. 
   if (document.location.host) {
-  ord=ordBank[ordet][0].toUpperCase();}
+  ord=ordBank[valg][0].toUpperCase();}
   else {
-    ord=ordBank[ordet].toUpperCase()
+    ord=ordBank[valg].toUpperCase()
   }
   ordArray=ord.split("");
-//lager alfabetet på sjermen, og gir dem tilsvarende bokstav i uppercase som både ID og tekst, ID brukes til å sjekke opp imot ordet senere.
+  //Lager alfabetet på skjermen, og gir dem tilsvarende bokstav i uppercase som både ID og tekst, ID brukes til å sjekke opp imot ordet senere.
   for(i=0;i<alphabet.length;i++){
       $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
     }
 
-
 $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
-//kaller funksjonen tastatur når "keyup" merkes mens du er på siden, viktig for at tastaturet skal fungere.
+//Kaller funksjonen tastatur når "keyup" merkes mens du er på siden, viktig for at tastaturet skal fungere.
   $(document).on("keyup", tastatur);
 
-  //lager tiles som tilsvarer lengden på ordet, disse brukes til å hvis rette bokstaver.
+  //Lager tiles som tilsvarer lengden på ordet, disse brukes til å vise rette bokstaver.
   $('#spill').append('<div id="bokstav"></div>');
   var bokstaver=ord.length;
   for(j=0;j<bokstaver;j++){
@@ -57,9 +57,9 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
     }
 canvasTegn();
   }
-  //lager en restartknapp som kaller reset funksjonen
+  //Lager en restartknapp som kaller reset funksjonen
   $('#restart').append('<button id="reset" class="res" >Restart</button>');
-  //funksjonen til reset knappen, den tømmer spill og knapper div's for å sikre at dem er tomme før neste spill startes.
+  //Funksjonen til resetknappen, den tømmer spill og knapper div's for å sikre at dem er tomme før neste spill startes.
   $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
     spill.removeChild(spill.lastChild);
@@ -71,14 +71,14 @@ canvasTegn();
     neste()
 
   })
-  //funksjonen som oppdaterer canvas når du bytter stil
+  //Funksjonen som oppdaterer canvas når du bytter stil
   $('.res').on("click",function(){
     canvasTegn();
 })
 
-//funksjonen som leser av tastatur input og setter bokstaven til input.
+//Funksjonen som leser av tastatur input og setter bokstaven til input.
   function tastatur(event) {
-    if((event.keyCode>64 && event.keyCode<91) || event.keyCode==197 || event.keyCode==222 || event.keyCode==221){
+    if(event.keyCode>64 && event.keyCode<91){
           input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
           riktig=false
@@ -88,20 +88,18 @@ canvasTegn();
               for(i=0;i<forsokt.length;i++){
                 if(input==forsokt[i]){
                   forsoktboks=true
-          }
+                  }
+                } 
+    //Hvis knappen ikke er brukt før (altså ikke i forsokt array) så bli bokstaven sendt til forsokt array og skripten går videre.
+    if (!forsoktboks) {
+      forsokt.push(input);
+      sjekk()
+    }
   }
-  //hvis knappen ikke er brukt før (altså ikke i forsokt array) så bli bokstaven sendt til forsokt array og skripten går videre.
-  if (!forsoktboks) {
-    forsokt.push(input);
-    sjekk()
+};
 
-        }
-      }
-    };
-
-    //leser av input fra bokstavknappene på sjermen
+    //Leser av input fra bokstavknappene på skjermen
     $("#knapper").on('click', 'button', function() {
-
       input = this.id;
       var forsoktboks = false
       for(i=0;i<forsokt.length;i++){
@@ -113,16 +111,12 @@ canvasTegn();
           if (!forsoktboks) {
             forsokt.push(input);
             sjekk()
-
-
         }
     })
 
-
-
-  //sjekker om bokstaven er i ordet
+  //Sjekker om bokstaven er i ordet
     function sjekk() {
-      //disable knappen som blir trykket
+      //Disable knappen som blir trykket
       $("#"+input).attr('disabled', 'disabled');
       var gjettResultat = false;
 
@@ -130,9 +124,10 @@ canvasTegn();
       if(input == ordArray[x]){
         $('#t'+x).append(input.toUpperCase());
         gjettResultat = true;
-
-          }
-}       //hvis bokstaven er i order, kalles en funksjon som sjekker om hele svaret er korrekt
+        }
+      }    
+    
+    //Hvis bokstaven er i ordet, kalles en funksjon som sjekker om hele svaret er korrekt
     if(gjettResultat){sjekkSvar();}
     else{feil();}
   }
@@ -166,10 +161,9 @@ function feil() {
         if ($('#t'+x).is(':empty')){
             $('#t'+x).append('<span id="feilbokover">'+ordArray[x].toUpperCase()+'</span>');
         }
-
+      }
+    }
   }
-}
-}
 }
 //skrur av all input(tastatur og bokstaver på sjermen fjernes)
 function skruAvInput() {
@@ -192,7 +186,6 @@ function canvasTegn(){
     img1.onload=function(){
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img1,0,0);
-
       }
     }
 
@@ -256,6 +249,8 @@ function canvasTegn(){
 
 })
 
+
+//Deklarerer variablene for å kunne bytte stil
 var hash = location.hash;
 var startStil = location.hash.match(/#(\w+)/)[1];
 
@@ -273,6 +268,7 @@ function byttStil(stil){
   location.hash = stil;
 }
 
+//Funksjonen for å kunne mute musikken
 function muteLyd(){
   var lyd = document.getElementById("lydSpor");
   if(lydSpor.muted == false){
