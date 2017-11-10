@@ -263,8 +263,13 @@ var hash = location.hash;
 var startStil = location.hash.match(/#(\w+)/)[1];
 
 function byttStil(stil){
+  if(stil=="bit"){
+    document.getElementById("overskrift").innerHTML = "8-" + stil + " hangman";
+  }else{
+    document.getElementById("overskrift").innerHTML = stil + " hangman";
+  }
+
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
-  document.getElementById("overskrift").innerHTML = stil + " hangman";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
   document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
   location.hash = stil;
