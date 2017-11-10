@@ -80,7 +80,7 @@ canvasTegn();
 
 
   function tastatur(event) {
-    if(event.keyCode>64 && event.keyCode<91){
+    if((event.keyCode>64 && event.keyCode<91) || event.keyCode==197 || event.keyCode==222 || event.keyCode==221){
           input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
           riktig=false
