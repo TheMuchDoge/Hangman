@@ -2,38 +2,10 @@ $(function(){
     onPageLoad();
 });
 function onPageLoad(){
-console.log(canvasStil)
-console.log(location.hash.match(/#(\w+)/)[1])
-  function updatePages() {
-    let parts = window.location.hash.split('/');
-
-    if(parts.length < 2) {                       // If parts[1] is not set
-      window.location.hash = '#/index'; // Set default page
-    }
-
-    for(let page of document.getElementsByClassName('page')) {
-      if(page.id == parts[1]) {
-        page.style.display = 'inline'; // Show page
-        if(page.onshow)  // If onshow is set
-          page.onshow(); // call the onshow() function
-      }
-      else {
-        page.style.display = 'none';  // Hide page
-      }
-    }
-  }
-  document.body.onload = function() { // When the application is fully loaded:
-    updatePages();
 
 
-  }
 
-  document.body.onhashchange = function() {
-    updatePages();
-  }
-}
 
-spillside.onshow = function() {
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
@@ -49,28 +21,46 @@ let liv;
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
 ,'s','t','u','v','w','x','y','z','æ','ø','å'];
 
-var ordAlt = ["damer", "spill", "datamaskin", "hore"];
+
 var valg;
 var ord;
 
+if (document.location.host) {
+
+  console.log("PIKK")
+  $.getJSON("ordBank.json", function(data) {
+  for(i=0; i<data.ordliste.length; i++) {
+    ordBank [i]=new Array;
+    ordBank [i][0]=data.ordliste [i].ord
+  }
+  neste()})
+} else {
+  console.log("BØ!")
+  ordBank = ["damer", "spill", "datamaskin", "hore"];
+  neste();
+}
 
 
-
-
-neste();
 
 //kaller på funksjon til Ã¥ finne ordet
 function neste() {
+  var ordet=Math.floor(Math.random()*ordBank.length);
 
-  valg = Number(Math.floor((Math.random() * ordAlt.length)));
-  ord = ordAlt[valg].toUpperCase();
+  console.log(ordBank)
+  console.log(ordBank.length)
+  if (document.location.host) {
+  ord=ordBank[ordet][0];}
+  else {
+    ord=ordBank[ordet]
+  }
+  console.log(ord)
   ordArray=ord.split("");
 
   for(i=0;i<alphabet.length;i++){
       $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
     }
   $('#spill').append('<div id="bokstav"></div>');
-  //  finnord ();
+
   liv=7;
 $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
 
@@ -105,6 +95,7 @@ canvasTegn();
     console.log(canvasStil)
     canvasTegn();
 })
+
 
 
   function tastatur(event) {
@@ -150,7 +141,7 @@ canvasTegn();
 
   //onclick funksjon for alfabetet
     function sjekk() {
-      console.log(canvasStil)
+      console.log(input)
 
       //disable knappen som blir trykket
       var gjettResultat = false;

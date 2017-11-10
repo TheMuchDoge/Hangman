@@ -72,8 +72,11 @@ $.getJSON("ordBank.json", function(data) {
 
     function finnord() {
     var ordet=Math.floor(Math.random()*ordBank.length);
+    console.log(ordet)
+    console.log(ordBank)
     ord=ordBank[ordet][0];
     ordArray=ord.split("");
+
 
 
 
@@ -143,7 +146,7 @@ function Restart() {
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
   }*/
 
-  
+
 
 
 });
