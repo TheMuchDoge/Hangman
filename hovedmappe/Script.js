@@ -256,11 +256,10 @@ function canvasTegn(){
 
 })
 
-  //***************** HER JOBBER ELIAS
-
 var hash = location.hash;
 var startStil = location.hash.match(/#(\w+)/)[1];
 
+//Bytter stiler basert på location.hash
 function byttStil(stil){
   if(stil=="bit"){
     document.getElementById("overskrift").innerHTML = "8-" + stil + " hangman";
