@@ -12,10 +12,8 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 ,'s','t','u','v','w','x','y','z','æ','ø','å'];
 var ord;
 
-//funksjonen som henter ordBank fra json hvis du er online, eller fra script hvis du ikker er det
+//funksjonen som henter ordBank fra json hvis du er online, eller fra script hvis du ikke er det
 if (document.location.host) {
-
-  console.log("")
   $.getJSON("ordBank.json", function(data) {
   for(i=0; i<data.ordliste.length; i++) {
     ordBank [i]=new Array;
@@ -23,7 +21,7 @@ if (document.location.host) {
   }
   neste()})
 } else {
-  console.log("BØ!")
+  console.log("Du kjører filen lokalt, begrenset mengde ord")
   ordBank = ["damer", "spill", "datamaskin", "hore"];
   neste();
 }
@@ -75,7 +73,6 @@ canvasTegn();
   })
   //funksjonen som oppdaterer canvas når du bytter stil
   $('.res').on("click",function(){
-    console.log(canvasStil)
     canvasTegn();
 })
 
@@ -259,11 +256,10 @@ function canvasTegn(){
 
 })
 
-  //***************** HER JOBBER ELIAS
-
 var hash = location.hash;
 var startStil = location.hash.match(/#(\w+)/)[1];
 
+//Bytter stiler basert på location.hash
 function byttStil(stil){
   if(stil=="bit"){
     document.getElementById("overskrift").innerHTML = "8-" + stil + " hangman";
