@@ -1,32 +1,21 @@
-$(function(){
-    onPageLoad();
-});
-function onPageLoad(){
+$(document).ready(function ()  {
 
-
-
-
+//variabler som brukes gjennom hele koden
 var ordBank=new Array;
 var ordArray=new Array;
 var forsokt=new Array;
-//var ord;
 var input;
 var c;
 var canvas;
 let liv;
-
-// var ordValgTekst = document.getElementById("ordValgTekst");
-
-
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
 ,'s','t','u','v','w','x','y','z','æ','ø','å'];
-
-
-var valg;
 var ord;
+
+//funksjonen som henter ordBank fra json hvis du er online, eller fra script hvis du ikker er det
 if (document.location.host) {
 
-  console.log("PIKK")
+  console.log("")
   $.getJSON("ordBank.json", function(data) {
   for(i=0; i<data.ordliste.length; i++) {
     ordBank [i]=new Array;
@@ -39,38 +28,40 @@ if (document.location.host) {
   neste();
 }
 
-//kaller på funksjon til Ã¥ finne ordet
-function neste() {
 
+function neste() {
+  //antall liv du starter med
+  liv=7;
+  //funksjonen som velger ordet fra array
   var ordet=Math.floor(Math.random()*ordBank.length);
+  //funksjon som velger ordet avhenging av om det er offline eller online. dette var nødvendig da uthenting av data fra json genererte flere arrays
   if (document.location.host) {
   ord=ordBank[ordet][0].toUpperCase();}
   else {
     ord=ordBank[ordet].toUpperCase()
   }
   ordArray=ord.split("");
-
+//lager alfabetet på sjermen, og gir dem tilsvarende bokstav i uppercase som både ID og tekst, ID brukes til å sjekke opp imot ordet senere.
   for(i=0;i<alphabet.length;i++){
       $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
     }
-  $('#spill').append('<div id="bokstav"></div>');
-    liv=7;
-$('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
 
+
+$('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
+//kaller funksjonen tastatur når "keyup" merkes mens du er på siden, viktig for at tastaturet skal fungere.
   $(document).on("keyup", tastatur);
 
-
-
-  //ska jo egentlig lag boksa, men vetdafaen
-
+  //lager tiles som tilsvarer lengden på ordet, disse brukes til å hvis rette bokstaver.
+  $('#spill').append('<div id="bokstav"></div>');
   var bokstaver=ord.length;
-
   for(j=0;j<bokstaver;j++){
       $('#bokstav').append('<div class="tile" id=t'+j+'></div>');
     }
 canvasTegn();
   }
+  //lager en restartknapp som kaller reset funksjonen
   $('#restart').append('<button id="reset" class="res" >Restart</button>');
+  //funksjonen til reset knappen, den tømmer spill og knapper div's for å sikre at dem er tomme før neste spill startes.
   $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
     spill.removeChild(spill.lastChild);
@@ -78,31 +69,31 @@ canvasTegn();
     while (knapper.hasChildNodes()) {
     knapper.removeChild(knapper.lastChild);
   } forsokt.length = 0;
-    /*  ordArray.length = 0
-      for(i=0;i<alphabet.length;i++){
-            forsokt.push(alphabet[i].toUpperCase());}*/
+
     neste()
 
   })
+  //funksjonen som oppdaterer canvas når du bytter stil
   $('.res').on("click",function(){
     console.log(canvasStil)
     canvasTegn();
 })
 
-
+//funksjonen som leser av tastatur input og setter bokstaven til input.
   function tastatur(event) {
     if((event.keyCode>64 && event.keyCode<91) || event.keyCode==197 || event.keyCode==222 || event.keyCode==221){
           input = String.fromCharCode (event.keyCode).toUpperCase();
           forsoktboks = false
           riktig=false
+          //skrur av knappen så du bare kan trykke på den en gang
           $("#event.charCode").attr('disabled', 'disabled');
-
+          // dobbeltsjekk av at bokstaven ikke er brukt før
               for(i=0;i<forsokt.length;i++){
                 if(input==forsokt[i]){
                   forsoktboks=true
           }
   }
-
+  //hvis knappen ikke er brukt før (altså ikke i forsokt array) så bli bokstaven sendt til forsokt array og skripten går videre.
   if (!forsoktboks) {
     forsokt.push(input);
     sjekk()
@@ -111,7 +102,7 @@ canvasTegn();
       }
     };
 
-
+    //leser av input fra bokstavknappene på sjermen
     $("#knapper").on('click', 'button', function() {
 
       input = this.id;
@@ -121,6 +112,7 @@ canvasTegn();
           forsoktboks=true
         }
       }
+      //hvis knappen ikke er brukt før (altså ikke i forsokt array) så bli bokstaven sendt til forsokt array og skripten går videre.
           if (!forsoktboks) {
             forsokt.push(input);
             sjekk()
@@ -131,14 +123,11 @@ canvasTegn();
 
 
 
-  //onclick funksjon for alfabetet
+  //sjekker om bokstaven er i ordet
     function sjekk() {
-      console.log(input)
-
       //disable knappen som blir trykket
-      var gjettResultat = false;
       $("#"+input).attr('disabled', 'disabled');
-      //  var input = inpBokstav.value
+      var gjettResultat = false;
 
     for(var x = 0;x<ordArray.length;x++){
       if(input == ordArray[x]){
@@ -146,7 +135,7 @@ canvasTegn();
         gjettResultat = true;
 
           }
-}
+}       //hvis bokstaven er i order, kalles en funksjon som sjekker om hele svaret er korrekt
     if(gjettResultat){sjekkSvar();}
     else{feil();}
   }
@@ -157,7 +146,7 @@ function sjekkSvar() {
   for (var i = 0; i < ord.length; i++) {
     svar+=($('#t'+i).text());
   }
-
+//hvis svaret er korrekt, så kalles en funksjon som skrur av input og fjerner canvas
   if(svar==ord){
         $('#spill').append('<div id="spillvant">DU VANT!</div>');
         skruAvInput();
@@ -169,13 +158,12 @@ function feil() {
   liv-=1
   canvasTegn();
   livTekst.innerHTML = "Du har bare " + liv + " liv igjen!";
+  //hvis liv = 0, så skrus input av og spillover beskjeden leveres.
   if (liv<1) {
     skruAvInput();
     livTekst.innerHTML = "Du har " + liv + " liv igjen!";
     $('#spill').append('<div id="spillover">GAMEOVER!</div>');
-    $(document).off("keypress", tastatur);
-    while (knapper.hasChildNodes()) {
-    knapper.removeChild(knapper.lastChild);}
+    //fyller opp bokstavene som mangler hvis du taper.
     for(var x = 0;x<ordArray.length;x++){
       if(ordArray[x] == ordArray[x]){
         if ($('#t'+x).is(':empty')){
@@ -186,6 +174,7 @@ function feil() {
 }
 }
 }
+//skrur av all input(tastatur og bokstaver på sjermen fjernes)
 function skruAvInput() {
   while (knapper.hasChildNodes()) {
   knapper.removeChild(knapper.lastChild);
@@ -194,7 +183,7 @@ function skruAvInput() {
 }
 
 var canvasStil = location.hash.match(/#(\w+)/)[1];
-
+//tegner canvas utifra liv igjen
 function canvasTegn(){
   canvas = document.querySelector('canvas');
   c = canvas.getContext('2d');
@@ -268,7 +257,7 @@ function canvasTegn(){
   }
 }
 
-}
+})
 
   //***************** HER JOBBER ELIAS
 
