@@ -21,29 +21,40 @@ let liv;
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
 ,'s','t','u','v','w','x','y','z','æ','ø','å'];
 
-var ordAlt = ["damer", "spill", "datamaskin", "hore", "allah"];
+
 var valg;
 var ord;
+f (document.location.host) {
 
-
-
-
-
-neste();
+  console.log("PIKK")
+  $.getJSON("ordBank.json", function(data) {
+  for(i=0; i<data.ordliste.length; i++) {
+    ordBank [i]=new Array;
+    ordBank [i][0]=data.ordliste [i].ord
+  }
+  neste()})
+} else {
+  console.log("BØ!")
+  ordBank = ["damer", "spill", "datamaskin", "hore"];
+  neste();
+}
 
 //kaller på funksjon til Ã¥ finne ordet
 function neste() {
 
-  valg = Number(Math.floor((Math.random() * ordAlt.length)));
-  ord = ordAlt[valg].toUpperCase();
+  var ordet=Math.floor(Math.random()*ordBank.length);
+  if (document.location.host) {
+  ord=ordBank[ordet][0];}
+  else {
+    ord=ordBank[ordet]
+  }
   ordArray=ord.split("");
 
   for(i=0;i<alphabet.length;i++){
       $('#knapper').append('<button id="'+alphabet[i].toUpperCase()+'" >'+alphabet[i].toUpperCase()+'</button>');
     }
   $('#spill').append('<div id="bokstav"></div>');
-  //  finnord ();
-  liv=7;
+    liv=7;
 $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
 
   $(document).on("keyup", tastatur);
