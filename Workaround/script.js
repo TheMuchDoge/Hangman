@@ -42,26 +42,16 @@ function neste() {
 
   liv=7;
 $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så langt!</div>');
+$('#spill').append('<button id="reset">Restart</button>');
   $(document).on("keypress", tastatur);
   // feilBokstavTekst.innerHTML = input & input2
   kran();
 
   //$('#spill').append('<button id="reset" onClick="location.href=location.href">Restart</button>');
-('#spill').append('<button id="reset">Restart</button>');
-$('#reset').on("click",function (){
-  while (spill.hasChildNodes()) {
-  spill.removeChild(spill.lastChild);
-}
-  while (knapper.hasChildNodes()) {
-  knapper.removeChild(knapper.lastChild);
-}
-    ordArray.length = 0
-    for(i=0;i<alphabet.length;i++){
-          forsokt.push(alphabet[i].toUpperCase());}
-          console.log("kokoko")
-  onPageLoad()
 
-})
+
+
+
   //ska jo egentlig lag boksa, men vetdafaen
   var bokstaver=ord.length;
 
@@ -70,6 +60,19 @@ $('#reset').on("click",function (){
     }
 
   }
+  $('#reset').on("click",function (){
+    console.log("kokoko")
+    while (spill.hasChildNodes()) {
+    spill.removeChild(spill.lastChild);
+  }
+    while (knapper.hasChildNodes()) {
+    knapper.removeChild(knapper.lastChild);
+  }
+      ordArray.length = 0
+      for(i=0;i<alphabet.length;i++){
+            forsokt.push(alphabet[i].toUpperCase());}
+
+    neste()})
 
 
 
