@@ -18,9 +18,9 @@
 	{
 		"ord":"kaffe"
 	},
-  {
-    "ord":"bord"
-  },
+  	{
+    	"ord":"bord"
+  	},
 	{
 		"ord":"zalo"
 	},
@@ -38,6 +38,9 @@
 	},
 	{
 		"ord":"nettleser"
+	},
+	{
+		"ord":"politikk"
 	}
 
 	]}
