@@ -2,8 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <!-- Henter ut tittelen etter temaet er valgt -->
     <title id="tittel"></title>
+    <!-- Henter ut ikonet til siden -->
     <link rel="icon" href="ressurser/favicon.ico" type="image/x-icon"/>
+    <!-- Linker til rammeverk, etc (f.eks bootstrap, jquery) -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
     <link id="cssLink" rel="stylesheet" type="text/css">
@@ -13,7 +16,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
    </head>
+   <!-- Velger stilen når siden lastes inn -->
    <body onload="byttStil(startStil)">
+    <!-- Navigasjonsbaren -->
     <nav id="navbar" class="navbar navbar-inverse">
       <div class="container-fluid">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -24,6 +29,7 @@
         <a href="index.html" class="navbar-brand">Hangman</a>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
+            <!-- Bruker location.hash for å endre temaet i byttStil-funksjonen -->
             <li><a class="res" onclick="byttStil('klassisk')">Klassisk</a></li>
             <li><a class="res" onclick="byttStil('bit')">8-bit</a></li>
             <li><a class="res" onclick="byttStil('arkade')">Arkade</a></li>
@@ -36,18 +42,23 @@
         </div>
       </div>
     </nav>
+    <!-- Legger til musikkavspilling -->
     <div id="player">
       <audio id="lydSpor" autoplay loop>
         <source src="" type="audio/mp3">
         Nettleseren din støtter ikke lydavspilling.
       </audio>
     </div>
+    <!-- Legger til en mute-knapp som bruker muteLyd-funksjonen i javascript -->
     <button id="muteknapp" onclick="muteLyd()">MUTE</button>
     <h1 id="overskrift"></h1>
+    <!-- div id="spill" inneholder bokstavplassene til ordet og antall liv -->
     <div id="spill"></div>
+    <!-- Legger til et canvas der selve hangman-en blir tegnet -->
     <canvas width="800" height="600">Nettleseren din støtter ikke canvas-elementet.</canvas>
+    <!-- div id="knapper" inneholder bokstavknappene -->
     <div id="knapper"></div>
+    <!-- Legger til en restartknapp -->
     <div id="restart"></div>
-
   </body>
 </html>
