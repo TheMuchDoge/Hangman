@@ -16,6 +16,7 @@ body {
   background-image: url("ressurser/Headerbakgrunn.png");
   background-repeat: no-repeat;
   font-family: arial;
+  zoom: 80%;
 }
 
 #header h1 {
