@@ -14,8 +14,6 @@ var ord;
 
 //funksjonen som henter ordBank fra json hvis du er online, eller fra script hvis du ikke er det
 if (document.location.host) {
-
-  console.log("")
   $.getJSON("ordBank.json", function(data) {
   for(i=0; i<data.ordliste.length; i++) {
     ordBank [i]=new Array;
@@ -23,7 +21,7 @@ if (document.location.host) {
   }
   neste()})
 } else {
-  console.log("Du er offline, begrenset mengde ord")
+  console.log("Du kjører filen lokalt, begrenset mengde ord")
   ordBank = ["damer", "spill", "datamaskin", "hore"];
   neste();
 }
@@ -75,7 +73,6 @@ canvasTegn();
   })
   //funksjonen som oppdaterer canvas når du bytter stil
   $('.res').on("click",function(){
-    console.log(canvasStil)
     canvasTegn();
 })
 
