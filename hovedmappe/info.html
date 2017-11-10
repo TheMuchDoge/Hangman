@@ -10,13 +10,9 @@
     <link rel="stylesheet" type="text/css" href="styling_info.css">
     <link id="cssLink" rel="stylesheet" type="text/css">
     <link rel="icon" href="ressurser/favicon.ico" type="image/x-icon"/>
-    <script src="script.js"></script>
     <title id="tittel"></title>
   </head>
-
-
-  <body onload="byttStil(startStil)">
-
+  <body>
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -25,26 +21,23 @@
           <span class="icon-bar"></span>
         </button>
       <a href="index.html" class="navbar-brand"> Hangman </a>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-              <li><a href="spillside.html#klassisk" class="res" onclick="byttStil('classic')">Klassisk</a></li>
-              <li><a href="spillside.html#bit" class="res" onclick="byttStil('bit')">8-bit</a></li>
-              <li><a href="spillside.html#arkade" class="res" onclick="byttStil('arcade')">Arkade</a></li>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="spillside.html#klassisk" class="res">Klassisk</a></li>
+          <li><a href="spillside.html#bit" class="res">8-bit</a></li>
+          <li><a href="spillside.html#arkade" class="res">Arkade</a></li>
+        </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="info.html" onclick="">Regler & info</a>
+            </li>
           </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="info.html" onclick="">Regler & info</a>
-              </li>
-            </ul>
-          </div>
+        </div>
       </div>
     </nav>
-
-
     <div id="header">
       <h1>Info</h1>
     </div>
-
     <div id="regler">
     <h1>Spillets Regler</h1>
       <li>Du har 7 liv.</li>
@@ -85,14 +78,5 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1784.7144147206884!2d10.385554215963523!3d63.42831098287382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466d31855768a975%3A0x6eeba6865bc69cab!2sGunnerus+gate+1%2C+7012+Trondheim!5e0!3m2!1sno!2sno!4v1510229723906"
       width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-
-
-      <script>
-          function byttStil(stil){
-            document.getElementById("cssLink").href = "styling_" + stil + ".css";
-            document.getElementById("overskrift").innerHTML = stil + " hangman";
-            document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-          }
-      </script>
   </body>
 </html>
