@@ -265,13 +265,13 @@ var startStil = location.hash.match(/#(\w+)/)[1];
 function byttStil(stil){
   if(stil=="bit"){
     document.getElementById("overskrift").innerHTML = "8-" + stil + " hangman";
+    document.getElementById("tittel").innerHTML = "8-" + stil.toUpperCase() + " HANGMAN";
   }else{
     document.getElementById("overskrift").innerHTML = stil + " hangman";
+    document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
   }
-
   document.getElementById("cssLink").href = "styling_" + stil + ".css";
   document.getElementById("lydSpor").src = "ressurser/" + stil + ".mp3";
-  document.getElementById("tittel").innerHTML = stil.toUpperCase() + " HANGMAN";
   location.hash = stil;
 }
 
