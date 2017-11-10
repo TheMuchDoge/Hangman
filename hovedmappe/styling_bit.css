@@ -1,6 +1,6 @@
 html {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
   left: 0;
   right: 0;
   top: 0;
@@ -114,29 +114,15 @@ canvas {
 }
 
 
-#spillover{
+#spillover, #spillvant {
   position: fixed;
   top: 40%;
   bottom: 0;
   left: 0;
   right: 0;
-  font-size: 60px;
+  font: normal 60px/normal "Anton", Helvetica, sans-serif;
   text-align: center;
-  /*-webkit-text-stroke-width: 1px;
- -webkit-text-stroke-color: black;*/
  text-shadow: 2.5px 2.5px 0 rgb(255,210,23) , 5px 5px 0 rgb(90,199,255) , 8px 8px 0 rgb(255,210,23) , 10px 10px 0 rgb(90,199,255) ;
-}
-
-#spillvant {
-  position: fixed;
-  top: 40%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 60px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
 }
 
 #reset {
@@ -155,16 +141,5 @@ canvas {
 }
 
 #livTekst {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
   display: none;
-}
-
-#MegaMan {
-  position: fixed;
-  top: 65%;
-  left: 80%;
-  zoom: 25%;
 }
