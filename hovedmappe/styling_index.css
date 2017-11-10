@@ -108,9 +108,3 @@ img {
   text-shadow: 0 0 5px rgba(21,171,195,0.7);
   text-align: center;
 }
-
-figure {
-  display:inline-block;
-  margin:10px;
-  text-align: center;
-}
