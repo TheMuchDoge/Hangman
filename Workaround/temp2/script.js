@@ -49,8 +49,7 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
   $(document).on("keyup", tastatur);
 
 
-
-  //ska jo egentlig lag boksa, men vetdafaen
+  
 
   var bokstaver=ord.length;
 
@@ -59,7 +58,6 @@ $('#spill').append('<div id="livTekst">Du har '+liv+' liv igjen, ingen feil så 
     }
 canvasTegn();
   }
-
   $('#restart').append('<button id="reset" class="res" >Restart</button>');
   $('#reset').on("click",function (){
   while (spill.hasChildNodes()) {
@@ -67,20 +65,17 @@ canvasTegn();
   }
     while (knapper.hasChildNodes()) {
     knapper.removeChild(knapper.lastChild);
-  }     forsokt.length = 0;
-    //  ordArray.length = 0
-    //  for(i=0;i<alphabet.length;i++){
-    //        forsokt.push(alphabet[i].toUpperCase());}
+  }
+      //ordArray.length = 0
+      /*for(i=0;i<alphabet.length;i++){
+            forsokt.push(alphabet[i].toUpperCase());}*/
     neste()
 
   })
   $('.resn').on("click",function(){
     console.log(canvasStil)
     canvasTegn();
-
-
-
-  })
+})
 
 
 
@@ -200,8 +195,8 @@ function canvasTegn(){
     img1.onload=function(){
       c.clearRect(0,0,canvas.width,canvas.height);
       c.drawImage(img1,0,0);
-  }
-}
+      }
+    }
   if (liv==6) {
     var img2=new Image();
     img2.src="ressurser/" + canvasStil + "_canvas/" + canvasStil + "_bilde2.gif";
