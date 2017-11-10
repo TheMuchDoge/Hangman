@@ -1,0 +1,140 @@
+html {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+body {
+  width: auto;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 100% 110%;
+  background-attachment: fixed;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#overskrift {
+    position: fixed;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-transform: uppercase;
+    border: none;
+    font: normal 84px/1 Arial Black, Gadget, sans-serif;
+    color: #800200;
+    text-align: center;
+}
+
+.tile {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  align-content: center;
+  font-size: 30px;
+  display: inline-block;
+  border-bottom: 1px solid black;
+   }
+
+#spill {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 15px 10px 15px;
+  text-decoration: none;
+}
+
+canvas {
+  position: fixed;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  right: 50%;
+  height: 60%;
+  width: 50%;
+}
+
+#bokstav {
+  position: fixed;
+  text-align: center;
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
+  top: 75%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #800200;
+}
+
+#knapper {
+  position: fixed;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  top: 85%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+button {
+  border: none;
+  font-family: Arial;
+  font-size: 250%;
+  text-decoration: none;
+  background: none;
+  color: #800200;
+  zoom: 90%;
+}
+
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#spillover, #spillvant {
+  position: fixed;
+  top: 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font: normal 60px/1 Arial Black, Gadget, sans-serif;
+  color: #800200;
+  text-align: center;
+}
+
+#reset {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+#muteknapp {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  font-size: 30px;
+}
+
+#livTekst {
+  position: fixed;
+  top: 92.5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+  color: #800200;
+  text-align: center;
+}
