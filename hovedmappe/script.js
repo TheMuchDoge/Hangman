@@ -24,7 +24,7 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 
 var valg;
 var ord;
-f (document.location.host) {
+if (document.location.host) {
 
   console.log("PIKK")
   $.getJSON("ordBank.json", function(data) {
